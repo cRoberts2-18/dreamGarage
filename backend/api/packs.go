@@ -1,13 +1,15 @@
 package api
 
 import (
+	"database/sql"
+	"dream_grarage_api/db"
 	"net/http"
 	"strconv"
 
 	"github.com/gin-gonic/gin"
 )
 
-type pack struct {
+type Pack struct {
 	Id    int    `json:"id"`
 	Name  string `json:"name"`
 	Image string `json:"image"`
@@ -16,84 +18,38 @@ type pack struct {
 }
 
 func GetPacks(c *gin.Context) {
-	packs := [10]pack{
-		{
-			Name:  "Hot hatches",
-			Image: "/placeholder.png",
-			Id:    1,
-			Featured: true,
-			Price: 600},
-		{
-			Name:  "Track Monsters",
-			Image: "/placeholder.png",
-			Id:    2,
-			Featured: true,
-			Price: 600},
-		{
-			Name:  "Supercars",
-			Image: "/placeholder.png",
-			Id:    3,
-			Featured: true,
-			Price: 600},
-		{
-			Name:  "Offroaders",
-			Image: "/placeholder.png",
-			Id:    4,
-			Featured: true,
-			Price: 600},
-		{
-			Name:  "JDM Legends",
-			Image: "/placeholder.png",
-			Id:    5,
-			Featured: true,
-			Price: 600},
-		{
-			Name:  "All-American Muscle",
-			Image: "/placeholder.png",
-			Id:    6,
-			Featured: false,
-			Price: 600},
-		{
-			Name:  "Hybrid Heroes",
-			Image: "/placeholder.png",
-			Id:    7,
-			Featured: false,
-			Price: 600},
-		{
-			Name:  "Roaring V12s",
-			Image: "/placeholder.png",
-			Id:    8,
-			Featured: false,
-			Price: 600},
-		{
-			Name:  "Grand Tourers",
-			Image: "/placeholder.png",
-			Id:    9,
-			Featured: false,
-			Price: 600},
-		{
-			Name:  "Budget Sports Cars",
-			Image: "/placeholder.png",
-			Id:    10,
-			Featured: false,
-			Price: 600}}
+		packs := []Pack{}
 
-	ResponseJSON(c, http.StatusOK, "Packs retrived successfully", packs)
+	rows, err := db.Conn.Queryx("SELECT * FROM packs")
+	if err != nil {
+		panic(err)
+	}
+	for rows.Next() {
+		var pack Pack
+		if err := rows.StructScan(&pack); err != nil {
+			panic(err)
+		}
+		packs = append(packs, pack)
+	}
+	ResponseJSON(c, http.StatusOK, "packs retrieved successfully", packs)
 }
 
 func GetPack(c *gin.Context) {
 	packId, err := strconv.Atoi(c.Param("id"))
-
 	if err == nil {
-		pack := pack{
-			Name:  "Hot hatches",
-			Image: "/placeholder.png",
-			Price: 600,
-			Id:    packId}
 
-		ResponseJSON(c, http.StatusOK, "Pack retrieved Successfully", pack)
+		var pack Pack
+
+		row := db.Conn.QueryRowx("SELECT * FROM packs WHERE id=$1", packId)
+		switch err := row.StructScan(&pack); err {
+		case sql.ErrNoRows:
+			ResponseJSON(c, http.StatusNotFound, "pack not found", nil)
+		case nil:
+			ResponseJSON(c, http.StatusOK, "pack retrieved successfully", pack)
+		default:
+			panic(err)
+		}
 	} else {
-		ResponseJSON(c, http.StatusNotFound, "pack not found", nil)
+		ResponseJSON(c, http.StatusNotFound, "Invalid Params", nil)
 	}
-
 }

@@ -1,15 +1,13 @@
 import type { Metadata } from 'next'
 import { Geist, Geist_Mono } from 'next/font/google'
-import './globals.css'
+import '../globals.css'
 import Link from 'next/link'
 import { HomeIcon, CarIcon, FlagIcon, CurrencyIcon } from 'lucide-react'
 import {
   NavigationMenu,
-  NavigationMenuContent,
   NavigationMenuItem,
   NavigationMenuLink,
-  NavigationMenuList,
-  NavigationMenuTrigger
+  NavigationMenuList
 } from '@/components/ui/navigation-menu'
 
 import {
@@ -17,7 +15,6 @@ import {
   TooltipContent,
   TooltipTrigger
 } from '@/components/ui/tooltip'
-import Home from './page'
 
 const geistSans = Geist({
   variable: '--font-geist-sans',

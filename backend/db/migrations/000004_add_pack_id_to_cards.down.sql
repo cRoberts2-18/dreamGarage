@@ -1,0 +1,1 @@
+alter TABLE cards DROP COLUMN packId

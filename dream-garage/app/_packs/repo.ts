@@ -9,17 +9,9 @@ export type pack = {
 }
 
 export const getPacks = async (): Promise<pack[]> => {
-  const options = {
-    method: 'POST',
-    body: '{"username":"admin","password":"password"}'
-  }
-
-  const token = await fetch(`${API_URL}/token`, options).then((response) =>
-    response.json()
-  )
-
+  const token = localStorage.getItem('access-token') || ''
   const header = new Headers()
-  header.set('Authorization', token.data.token)
+  header.set('Authorization', token)
 
   const res = await fetch(`${API_URL}/packs`, {
     cache: 'default',
@@ -27,6 +19,9 @@ export const getPacks = async (): Promise<pack[]> => {
   })
 
   const data = await res.json()
+  if (data.status == 401) {
+    document.location.href = '/login'
+  }
 
   return data.data
 }
