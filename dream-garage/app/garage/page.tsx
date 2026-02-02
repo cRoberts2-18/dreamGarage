@@ -3,72 +3,50 @@ import { Label } from '@/components/ui/label'
 import { Switch } from '@/components/ui/switch'
 import { CardGrid } from '@/components/garage/cardGrid'
 import Modal from '@/components/ui/modal'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import Image from 'next/image'
 import { StarIcon } from 'lucide-react'
-
-type card = {
-  name: string
-  image: string
-  rating: string
-  topSpeed: number
-  horsepower: number
-  handling: number
-  engine: string
-  packId: number
-  id: number
-}
-
-type pack = {
-  id: number
-  name: string
-}
+import { card, getCards } from '@/app/_cards/repo'
+import { pack, getPacks } from '@/app/_packs/repo'
 
 export default function Home() {
   const [showOnlyOwned, setShowOnlyOwned] = useState(false)
   const [viewCard, setViewCard] = useState<card | null | undefined>(null)
-  const collectedCars: Array<card> = [
-    {
-      name: 'BMW M3 GTR',
-      image: '/placeholder.png',
-      rating: 'S+',
-      topSpeed: 174,
-      horsepower: 500,
-      handling: 4,
-      engine: '4.0L Naturally aspirated V8',
-      packId: 1,
-      id: 1
-    }
-  ]
+  const [collectedCards, setCollectedCards] = useState<card[]>([])
+  const [packs, setPacks] = useState<pack[]>([])
 
-  const packs: Array<pack> = [
-    {
-      name: 'Hot hatches',
-      id: 1
-    },
-    {
-      name: 'Track Monsters',
-      id: 2
-    },
-    {
-      name: 'Supercars',
-      id: 3
-    },
-    {
-      name: 'Offroaders',
-      id: 4
-    },
-    {
-      name: 'JDM Legends',
-      id: 5
+  useEffect(() => {
+    async function loadAndSetCards() {
+      const cards = await getCards()
+      setCollectedCards(cards)
     }
-  ]
+
+    async function loadAndSetPacks() {
+      const packs = await getPacks()
+      setPacks(packs)
+    }
+
+    loadAndSetCards()
+    loadAndSetPacks()
+  }, [])
 
   const tempPack: Array<card> = Array.from({ length: 100 }).map(
     (item, index) => {
-      const car = collectedCars[0]
+      const car = collectedCards
+        ? collectedCards[0]
+        : {
+            name: 'Shit',
+            image: '/placeholder.png',
+            rating: 'S+',
+            topSpeed: 174,
+            horsepower: 500,
+            handling: 4,
+            engine: '4.0L Naturally aspirated V8',
+            packId: 1,
+            id: 1
+          }
 
-      return { ...car, id: index, packId: (index % 5) + 1 }
+      return { ...car, id: index, packId: (index % 10) + 1 }
     }
   )
 

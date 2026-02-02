@@ -1,3 +1,4 @@
+'use client'
 import { Card, CardContent, CardHeader, CardFooter } from '@/components/ui/card'
 import {
   Carousel,
@@ -8,68 +9,31 @@ import {
 } from '@/components/ui/carousel'
 import Image from 'next/image'
 import { CurrencyIcon } from 'lucide-react'
+import { pack, getPacks } from '@/app/_packs/repo'
+import { useState, useEffect } from 'react'
 
-export default async function Home() {
-  const featuredPacks = [
-    {
-      name: 'Supercars',
-      image: '/placeholder.png',
-      price: 600
-    },
-    {
-      name: 'Hot hatches',
-      image: '/placeholder.png',
-      price: 600
-    },
-    {
-      name: 'Track Monsters',
-      image: '/placeholder.png',
-      price: 600
-    },
-    {
-      name: 'Offroaders',
-      image: '/placeholder.png',
-      price: 600
-    },
-    {
-      name: 'JDM Legends',
-      image: '/placeholder.png',
-      price: 600
-    }
-  ]
+export default function Home() {
+  const [allPacks, setAllPacks] = useState<pack[]>([])
+  const [featuredPacks, setFeaturedPacks] = useState<pack[]>([])
 
-  const allPacks = [
-    ...featuredPacks,
-    {
-      name: 'All-American Muscle',
-      image: '/placeholder.png',
-      price: 600
-    },
-    {
-      name: 'Hybrid Heroes',
-      image: '/placeholder.png',
-      price: 600
-    },
-    {
-      name: 'Roaring V12s',
-      image: '/placeholder.png',
-      price: 600
-    },
-    {
-      name: 'Grand Tourers',
-      image: '/placeholder.png',
-      price: 600
-    },
-    {
-      name: 'Budget Sports Cars',
-      image: '/placeholder.png',
-      price: 600
+  useEffect(() => {
+    async function loadAndSetPacks() {
+      const packs = await getPacks()
+
+      const sortedPacks = packs.sort(function (a, b) {
+        if (a.name > b.name) return 1
+        if (a.name < b.name) return -1
+        return 0
+      })
+
+      const featuredPacks = packs.filter((pack) => pack.featured == true)
+
+      setAllPacks(sortedPacks)
+      setFeaturedPacks(featuredPacks)
     }
-  ].sort(function (a, b) {
-    if (a.name > b.name) return 1
-    if (a.name < b.name) return -1
-    return 0
-  })
+
+    loadAndSetPacks()
+  }, [])
 
   return (
     <div>
