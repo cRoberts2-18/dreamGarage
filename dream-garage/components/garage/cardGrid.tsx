@@ -45,7 +45,7 @@ export function CardGrid({
             key={index}
             className="relative transition delay-50 duration-300 ease-in-out hover:scale-102 "
           >
-            <span className="absolute -top-4 -right-3 p-2 bg-accent rounded-full">
+            <span className="absolute -top-2 -right-3 p-2 bg-accent rounded-full">
               {item.rating}
             </span>
             <Card

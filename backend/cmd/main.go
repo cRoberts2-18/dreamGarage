@@ -46,6 +46,9 @@ func main() {
 		// Packs
 		protected.GET("/packs", api.GetPacks)
 		protected.GET("/packs/:id", api.GetPack)
+
+		// users
+		protected.POST("/user/points", api.UpdateUserPoints)
 	}
 
 	r.Run(":6767")

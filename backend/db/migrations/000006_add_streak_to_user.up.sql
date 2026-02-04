@@ -1,0 +1,1 @@
+alter TABLE users ADD COLUMN streak INTEGER default 1;

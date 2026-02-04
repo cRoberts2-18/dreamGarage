@@ -2,6 +2,7 @@ package api
 
 import (
 	"database/sql"
+	"fmt"
 	"net/http"
 	"time"
 
@@ -28,7 +29,10 @@ func GenerateJWT(c *gin.Context) {
 	}
 
 	row := db.Conn.QueryRowx("SELECT * FROM users WHERE username=$1", loginRequest.Username)
-	switch err := row.StructScan(&user); err {
+
+	err := row.StructScan(&user)
+	fmt.Println(err)
+	switch err {
 	case sql.ErrNoRows:
 		ResponseJSON(c, http.StatusNotFound, "User not found", nil)
 		return
@@ -38,6 +42,7 @@ func GenerateJWT(c *gin.Context) {
 			expirationTime := time.Now().Add(15 * time.Minute)
 			token := jwt.NewWithClaims(jwt.SigningMethodHS256, jwt.MapClaims{
 				"exp": expirationTime.Unix(),
+				"userID": user.Id,
 			})
 			// Sign the token
 			tokenString, err := token.SignedString(jwtSecret)
@@ -45,7 +50,9 @@ func GenerateJWT(c *gin.Context) {
 				ResponseJSON(c, http.StatusInternalServerError, "Could not generate token", nil)
 				return
 			}
-			ResponseJSON(c, http.StatusOK, "Token generated successfully", gin.H{"token": tokenString})
+		
+			UpdateUserLastActive(user.Id)
+			ResponseJSON(c, http.StatusOK, "Token generated successfully", gin.H{"token": tokenString, "user": user})
 		} else {
 			ResponseJSON(c, http.StatusUnauthorized, "Invalid credentials", nil)
 		}
