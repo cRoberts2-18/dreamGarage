@@ -7,15 +7,22 @@ import {
   CarouselNext,
   CarouselPrevious
 } from '@/components/ui/carousel'
+import { toast } from 'sonner'
 import Image from 'next/image'
 import { CurrencyIcon } from 'lucide-react'
-import { pack, getPacks } from '@/app/_packs/repo'
+import { pack, getPacks, purchasePack } from '@/app/_packs/repo'
 import { useState, useEffect } from 'react'
+import { useRouter } from 'next/navigation'
+import Modal from '@/components/ui/modal'
+import { card } from '../_cards/repo'
+import { Button } from '@/components/ui/button'
 
 export default function Home() {
+  const router = useRouter()
   const [allPacks, setAllPacks] = useState<pack[]>([])
   const [featuredPacks, setFeaturedPacks] = useState<pack[]>([])
-
+  const [packOpened, setPackOpened] = useState<boolean>(false)
+  const [packResults, setPackResults] = useState<card[]>([])
   useEffect(() => {
     async function loadAndSetPacks() {
       const packs = await getPacks()
@@ -44,7 +51,18 @@ export default function Home() {
             {featuredPacks.map((item, index) => (
               <CarouselItem key={index}>
                 <div className="p-5">
-                  <Card className="transition delay-150 duration-300 ease-in-out hover:scale-102 hover:shadow-md/30">
+                  <Card
+                    className="transition delay-150 duration-300 ease-in-out hover:scale-102 hover:shadow-md/30 cursor-pointer"
+                    onClick={async () => {
+                      const res = await purchasePack(item.id, item.price)
+                      if (typeof res === 'string')
+                        toast.error(res, { position: 'top-center' })
+                      else {
+                        setPackOpened(true)
+                        setPackResults(res)
+                      }
+                    }}
+                  >
                     <CardHeader className="text-center">
                       <span className="font-semibold">{item.name}</span>
                     </CardHeader>
@@ -73,7 +91,18 @@ export default function Home() {
       <div className="grid grid-cols-4 gap-4 px-2">
         {allPacks.map((item, index) => (
           <div key={index}>
-            <Card className="transition delay-50 duration-300 ease-in-out hover:scale-102 hover:shadow-md/30">
+            <Card
+              className="transition delay-50 duration-300 ease-in-out hover:scale-102 hover:shadow-md/30 cursor-pointer"
+              onClick={async () => {
+                const res = await purchasePack(item.id, item.price)
+                if (typeof res === 'string')
+                  toast.error(res, { position: 'top-center' })
+                else {
+                  setPackOpened(true)
+                  setPackResults(res)
+                }
+              }}
+            >
               <CardHeader className="text-center">
                 <span className="font-semibold">{item.name}</span>
               </CardHeader>
@@ -94,6 +123,50 @@ export default function Home() {
           </div>
         ))}
       </div>
+
+      <Modal
+        showModal={packOpened}
+        title="Pack"
+        onClose={() => location.reload()}
+      >
+        <div className="grid grid-cols-5 gap-4 px-2 h-95 flex align-middle">
+          {packResults.map((item, index) => (
+            <div
+              key={index}
+              className="relative transition delay-50 duration-300 ease-in-out hover:scale-102 top-1/4"
+            >
+              <span className="absolute -top-2 -right-3 p-2 bg-accent rounded-full">
+                {item.rating}
+              </span>
+              <Card>
+                <CardContent className="text-center p-0">
+                  <span className="font-semibold">{item.name}</span>
+                  <div className="flex aspect-square items-center">
+                    <Image
+                      className="pt-2"
+                      src={item.image}
+                      width={250}
+                      height={100}
+                      alt={`Pack Image for ${item.name}`}
+                    />
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+          ))}
+        </div>
+
+        <div className="flex justify-end">
+          <Button
+            className="z-50 mb-1 me-1 rounded-xl"
+            onClick={() => {
+              router.push('/garage')
+            }}
+          >
+            Go to garage
+          </Button>
+        </div>
+      </Modal>
     </div>
   )
 }

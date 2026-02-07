@@ -35,14 +35,16 @@ func main() {
 	// Public routes
 	r.POST("/token", api.GenerateJWT)
 	r.POST("/user/create", api.InsertUser)
-
+	r.POST("/packs/:id/purchase", api.PurchasePack)
+	
 	// protected routes
 	protected := r.Group("/", api.JWTAuthMiddleware())
 	{
 		// Cars
 		protected.GET("/cards", api.GetCards)
 		protected.GET("/cards/:id", api.GetCard)
-
+		protected.POST("/cards/owned", api.GetUserOwnedCards)
+		
 		// Packs
 		protected.GET("/packs", api.GetPacks)
 		protected.GET("/packs/:id", api.GetPack)

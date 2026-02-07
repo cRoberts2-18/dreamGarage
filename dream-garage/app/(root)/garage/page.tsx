@@ -6,19 +6,27 @@ import Modal from '@/components/ui/modal'
 import { useEffect, useState } from 'react'
 import Image from 'next/image'
 import { StarIcon } from 'lucide-react'
-import { card, getCards } from '@/app/_cards/repo'
+import { card, getCards, getOwnedCards } from '@/app/_cards/repo'
 import { pack, getPacks } from '@/app/_packs/repo'
 
 export default function Home() {
   const [showOnlyOwned, setShowOnlyOwned] = useState(false)
   const [viewCard, setViewCard] = useState<card | null | undefined>(null)
-  const [collectedCards, setCollectedCards] = useState<card[]>([])
+  const [collectedCards, setCollectedCards] = useState<number[]>([])
+  const [allCards, setAllCards] = useState<card[]>([])
   const [packs, setPacks] = useState<pack[]>([])
+
+  const userString = localStorage?.getItem('user')
+  const userObj = userString ? JSON.parse(userString) : {}
+  const username = userObj.username
 
   useEffect(() => {
     async function loadAndSetCards() {
+      const ownedCards = await getOwnedCards()
+      setCollectedCards(ownedCards)
+
       const cards = await getCards()
-      setCollectedCards(cards)
+      setAllCards(cards)
     }
 
     async function loadAndSetPacks() {
@@ -30,32 +38,12 @@ export default function Home() {
     loadAndSetPacks()
   }, [])
 
-  const tempPack: Array<card> = Array.from({ length: 100 }).map(
-    (item, index) => {
-      const car = collectedCards
-        ? collectedCards[0]
-        : {
-            name: 'Shit',
-            image: '/placeholder.png',
-            rating: 'S+',
-            topSpeed: 174,
-            horsepower: 500,
-            handling: 4,
-            engine: '4.0L Naturally aspirated V8',
-            packId: 1,
-            id: 1
-          }
-
-      return { ...car, id: index, packId: (index % 10) + 1 }
-    }
-  )
-
   function toggleOwnedfilter(checked: boolean) {
     setShowOnlyOwned(checked)
   }
 
   function viewCardModal(id: number) {
-    const card = tempPack.find((card) => card.id == id)
+    const card = allCards.find((card) => card.id == id)
     setViewCard(card)
   }
 
@@ -67,7 +55,7 @@ export default function Home() {
     <div>
       <div className="w-full flex justify-between">
         <div className="w-35"></div>
-        <h1 className="text-center">Username Garage</h1>
+        <h1 className="text-center">{username} Garage</h1>
         <div className="w-35 flex items-center space-x-2">
           <Switch
             id="show-only-owned"
@@ -81,8 +69,8 @@ export default function Home() {
         <div key={index}>
           <CardGrid
             packName={item.name}
-            packItems={tempPack}
-            ownedItems={[1]}
+            packItems={allCards}
+            ownedItems={collectedCards}
             onlyOwned={showOnlyOwned}
             packId={item.id}
             cardClicked={(id: number) => viewCardModal(id)}

@@ -18,12 +18,12 @@ export default function Modal({
     <>
       {showModal &&
         createPortal(
-          <div className="bg-background absolute border-1 border-solid border-secondary left-1/4 top-1/4 w-1/2 min-h-1/2 rounded-xl shadow-md/40">
+          <div className="bg-background fixed border-1 border-solid border-secondary left-1/4 top-1/4 w-1/2 min-h-1/2 rounded-xl shadow-md/40 z-50">
             <div className="flex justify-between py-2 text-center font-semibold">
               <div className="w-10"></div>
               <h3 className="">{title}</h3>
               <div className="w-10">
-                <XIcon onClick={() => onClose()} />
+                <XIcon className="cursor-pointer" onClick={() => onClose()} />
               </div>
             </div>
             <hr />

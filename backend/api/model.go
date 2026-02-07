@@ -7,6 +7,12 @@ type JsonResponse struct {
 	Message string `json:"message"`
 	Data    any    `json:"data"`
 }
+
+type IdInput struct {
+	Id int
+}
+
+
 func ResponseJSON(c *gin.Context, status int, message string, data any) {
 	response := JsonResponse{
 		Status:  status,

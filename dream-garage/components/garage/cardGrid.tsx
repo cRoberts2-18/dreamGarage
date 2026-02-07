@@ -9,6 +9,7 @@ type packItem = {
   handling: number
   packId: number
   id: number
+  numberOwned?: number
 }
 
 type gridProps = {
@@ -18,6 +19,14 @@ type gridProps = {
   onlyOwned: boolean
   packId: number
   cardClicked: (id: number) => void
+}
+
+const ratingMap: any = {
+  'S+': 5,
+  S: 4,
+  A: 3,
+  B: 2,
+  C: 1
 }
 
 export function CardGrid({
@@ -32,7 +41,20 @@ export function CardGrid({
     packItems = packItems.filter((packItem) => ownedItems.includes(packItem.id))
   }
 
-  packItems = packItems.filter((packItem) => packItem.packId == packId)
+  packItems = packItems
+    .filter((packItem) => packItem.packId == packId)
+    .map((pack) => {
+      const cardsOwned = ownedItems.reduce((acc, cardId) => {
+        return pack.id == cardId ? (acc += 1) : acc
+      }, 0)
+      return { ...pack, numberOwned: cardsOwned }
+    })
+    .sort((a: packItem, b: packItem): number => {
+      if (ratingMap[a.rating] > ratingMap[b.rating]) return -1
+      if (ratingMap[a.rating] < ratingMap[b.rating]) return 1
+      if (ratingMap[a.rating] == ratingMap[b.rating]) return 0
+      return 0
+    })
 
   if (!packItems.length) return <div></div>
 
@@ -73,6 +95,14 @@ export function CardGrid({
                 </CardContent>
               )}
             </Card>
+
+            {item.numberOwned && item?.numberOwned > 1 ? (
+              <span className="absolute -bottom-2 -right-3 p-2 bg-accent rounded-full">
+                {item.numberOwned}
+              </span>
+            ) : (
+              ''
+            )}
           </div>
         ))}
       </div>

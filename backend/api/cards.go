@@ -19,6 +19,7 @@ type Card struct {
 	Engine     string `json:"engine"`
 	PackId     int    `json:"packId"`
 	Id         int    `json:"id"`
+	PackWeight int    `json:"packWeight"`
 }
 
 func GetCards(c *gin.Context) {
@@ -36,6 +37,29 @@ func GetCards(c *gin.Context) {
 		cards = append(cards, card)
 	}
 	ResponseJSON(c, http.StatusOK, "Cards retrieved successfully", cards)
+}
+
+func GetUserOwnedCards(c *gin.Context) {
+	var input IdInput
+	if err := c.ShouldBindJSON(&input); err != nil {
+		ResponseJSON(c, http.StatusBadRequest, "Invalid request payload", nil)
+		return
+	}
+	var cardIds []int
+	rows, queryErr := db.Conn.Queryx("SELECT card_id FROM user_cards")
+
+	if queryErr != nil {
+		ResponseJSON(c, http.StatusNotFound, "Invalid Params", queryErr)
+	}
+	for rows.Next() {
+		var cardId int
+		if err := rows.Scan(&cardId); err != nil {
+			ResponseJSON(c, http.StatusBadRequest, "An unknown error occured", nil)
+		}
+		cardIds = append(cardIds, cardId)
+	}
+	ResponseJSON(c, http.StatusOK, "Cards retrieved successfully", cardIds)
+
 }
 
 func GetCard(c *gin.Context) {

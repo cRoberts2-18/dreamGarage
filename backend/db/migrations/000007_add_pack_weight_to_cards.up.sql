@@ -1,0 +1,1 @@
+alter TABLE cards ADD COLUMN packWeight INTEGER default 50;
