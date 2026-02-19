@@ -2,13 +2,7 @@
 import { Geist, Geist_Mono } from 'next/font/google'
 import '../globals.css'
 import Link from 'next/link'
-import {
-  HomeIcon,
-  CarIcon,
-  FlagIcon,
-  CurrencyIcon,
-  CheckIcon
-} from 'lucide-react'
+import { ToolboxIcon, CarIcon, CurrencyIcon, CheckIcon } from 'lucide-react'
 import {
   NavigationMenu,
   NavigationMenuItem,
@@ -26,6 +20,7 @@ import { updatePoints } from '../_user/repo'
 import Modal from '@/components/ui/modal'
 import { Card, CardContent } from '@/components/ui/card'
 import { usePathname } from 'next/navigation'
+import Image from 'next/image'
 const geistSans = Geist({
   variable: '--font-geist-sans',
   subsets: ['latin']
@@ -83,7 +78,9 @@ export default function RootLayout({
   return (
     <div>
       <div className="w-full flex justify-between py-2">
-        <div className="ps-3 w-45">{user.username}</div>
+        <div className="ps-3 w-45">
+          <Image src="/dg.png" alt="Dream Garage logo" height={30} width={30} />
+        </div>
         <NavigationMenu>
           <NavigationMenuList className="w-full">
             <NavigationMenuItem>
@@ -105,16 +102,16 @@ export default function RootLayout({
                 <Tooltip>
                   <TooltipTrigger asChild>
                     <Link href="/">
-                      <HomeIcon />
+                      <ToolboxIcon />
                     </Link>
                   </TooltipTrigger>
                   <TooltipContent>
-                    <p>Home</p>
+                    <p>Shop</p>
                   </TooltipContent>
                 </Tooltip>
               </NavigationMenuLink>
             </NavigationMenuItem>
-            <NavigationMenuItem>
+            {/* <NavigationMenuItem>
               <NavigationMenuLink>
                 <Tooltip>
                   <TooltipTrigger asChild>
@@ -127,7 +124,7 @@ export default function RootLayout({
                   </TooltipContent>
                 </Tooltip>
               </NavigationMenuLink>
-            </NavigationMenuItem>
+            </NavigationMenuItem> */}
           </NavigationMenuList>
         </NavigationMenu>
         <div className="font-size-sm w-45 flex justify-end align-middle pe-3">

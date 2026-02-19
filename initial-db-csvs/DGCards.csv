@@ -1,0 +1,450 @@
+200,Toyota GR86,/s+/176.jpg, B,140,228,4, 2.4L naturally aspirated flat-4,4,20
+201,Nissan 370Z Nismo,/s+/176.jpg, B,155,350,4, 3.7L naturally aspirated V6 VQ37VHR,4,20
+202,Mazda RX-7 FC3S,/s+/176.jpg, B,149,200,4, 1.3L turbo twin-rotor rotary,4,20
+203,Toyota Crown Athlete (JZS171),/s+/176.jpg, B,155,276,3, 2.5L turbo inline-6 1JZ-GTE,4,20
+204,Honda Prelude VTEC (BB6),/s+/176.jpg, B,140,200,4, 2.2L naturally aspirated inline-4 H22A,4,20
+205,Mitsubishi Galant VR-4,/s+/176.jpg, B,140,237,4, 2.0L twin-turbo V6 6A13TT,4,20
+206,Toyota MR2 (AW11),/s+/176.jpg, C,124,112,4, 1.6L naturally aspirated inline-4 4A-GE,4,15
+207,Nissan Pulsar GTI-R,/s+/176.jpg, C,143,227,4, 2.0L turbo inline-4 SR20DET,4,15
+208,Honda CR-X SiR,/s+/176.jpg, C,125,160,4, 1.6L naturally aspirated inline-4 B16A,4,15
+209,Toyota Starlet Glanza V,/s+/176.jpg, C,130,133,4, 1.3L turbo inline-4 4E-FTE,4,15
+210,Mazda Cosmo (JC),/s+/176.jpg, C,150,276,3, 1.3L twin-rotor twin-turbo rotary,4,15
+211,Nissan Stagea 260RS,/s+/176.jpg, C,155,276,3, 2.6L twin-turbo inline-6 RB26DETT,4,15
+212,Subaru SVX,/s+/176.jpg, C,143,230,3, 3.3L naturally aspirated flat-6 EG33,4,15
+213,Toyota Soarer 2.5 GT-T,/s+/176.jpg, C,155,276,3, 2.5L turbo inline-6 1JZ-GTE,4,15
+214,Honda Accord Euro R (CL1),/s+/176.jpg, C,145,217,4, 2.2L naturally aspirated inline-4 H22A,4,15
+215,Mitsubishi FTO GP Version R,/s+/176.jpg, C,140,197,4, 2.0L naturally aspirated V6 6A12,4,15
+216,Toyota Altezza RS200,/s+/176.jpg, C,143,207,4, 2.0L naturally aspirated inline-6 3S-GE,4,15
+217,Nissan Cefiro A31,/s+/176.jpg, C,140,205,3, 2.0L turbo inline-6 RB20DET,4,15
+218,Mazda Familia GT-X,/s+/176.jpg, C,137,210,4, 1.8L turbo inline-4 BP-T,4,15
+219,Subaru Impreza WRX (Blobeye),/s+/176.jpg, C,143,227,4, 2.0L turbo flat-4 EJ20,4,15
+220,Toyota Levin AE111,/s+/176.jpg, C,140,165,4, 1.6L naturally aspirated inline-4 4A-GE,4,15
+458,Lexus RC F Track Edition,/s+/446.jpg, A,168,472,5, 5.0L naturally aspirated V8,10,40
+459,Porsche Cayman GT4 (981),/s+/446.jpg, A,188,385,5, 3.8L naturally aspirated flat-6,10,40
+460,McLaren Senna,/s+/446.jpg, A,208,800,5, 4.0L twin-turbo V8,10,40
+461,Honda NSX Type R,/s+/446.jpg, B,155,290,5, 3.2L naturally aspirated V6,10,20
+462,Lotus Exige Cup 430,/s+/446.jpg, B,154,430,5, 3.5L supercharged V6,10,20
+463,Alpine A110 S,/s+/446.jpg, B,155,292,5, 1.8L turbo inline-4,10,20
+464,Chevrolet Camaro ZL1 1LE,/s+/446.jpg, B,198,650,4, 6.2L supercharged V8,10,20
+465,Dodge Viper ACR,/s+/446.jpg, B,177,645,4, 8.4L naturally aspirated V10,10,20
+466,Ford GT (2005),/s+/446.jpg, B,205,550,5, 5.4L supercharged V8,10,20
+467,Audi RS3 LMS,/s+/446.jpg, B,155,400,4, 2.5L turbo inline-5,10,20
+468,Nissan 370Z Nismo,/s+/446.jpg, B,155,350,4, 3.7L naturally aspirated V6,10,20
+469,BMW Z4 M,/s+/446.jpg, B,155,340,5, 3.2L naturally aspirated inline-6,10,20
+470,Porsche 911 GT2 RS (997),/s+/446.jpg, B,211,690,5, 3.6L twin-turbo flat-6,10,20
+471,Chevrolet Corvette Grand Sport,/s+/446.jpg, B,180,460,4, 6.2L naturally aspirated V8,10,20
+472,Lamborghini Gallardo Superleggera,/s+/446.jpg, B,202,570,5, 5.2L naturally aspirated V10,10,20
+473,McLaren 675LT,/s+/446.jpg, B,204,666,5, 3.8L twin-turbo V8,10,20
+474,Jaguar F-Type SVR,/s+/446.jpg, B,200,575,5, 5.0L supercharged V8,10,20
+475,Aston Martin Vantage AMR,/s+/446.jpg, B,190,510,5, 4.0L twin-turbo V8,10,20
+476,Mazda RX-7 Spirit R,/s+/446.jpg, C,155,276,5, 1.3L twin-rotor rotary,10,15
+477,Toyota MR2 Turbo,/s+/446.jpg, C,150,200,5, 2.0L turbo inline-4,10,15
+478,Nissan Silvia S15 Spec-R,/s+/446.jpg, C,155,250,5, 2.0L turbo inline-4,10,15
+479,Honda S2000 (AP2),/s+/446.jpg, C,150,247,5, 2.0L naturally aspirated inline-4,10,15
+74,Mazda2 Sport,/s+/41.jpg, C,118,148,3, 1.5L inline-4,1,15
+86,Bugatti Chiron Super Sport,/s+/86.jpg, S+,273,1578,5, 8.0L quad-turbo W16,2,1
+87,Ferrari SF90 Stradale,/s+/86.jpg, S,211,986,5, 4.0L twin-turbo V8 hybrid,2,25
+88,Lamborghini Aventador SVJ,/s+/86.jpg, S,217,759,4, 6.5L naturally aspirated V12,2,25
+89,McLaren 765LT,/s+/86.jpg, S,205,755,5, 4.0L twin-turbo V8,2,25
+90,Porsche 911 GT2 RS (991),/s+/86.jpg, S,211,700,5, 3.8L twin-turbo flat-6,2,25
+91,Ferrari 488 Pista,/s+/86.jpg, A,211,710,5, 3.9L twin-turbo V8,2,40
+92,Lamborghini Huracan Performante,/s+/86.jpg, A,202,631,5, 5.2L naturally aspirated V10,2,40
+93,McLaren 720S,/s+/86.jpg, A,212,710,5, 4.0L twin-turbo V8,2,40
+94,Porsche 911 Turbo S (992),/s+/86.jpg, A,205,640,5, 3.8L twin-turbo flat-6,2,40
+95,Aston Martin DBS Superleggera,/s+/86.jpg, A,211,715,4, 5.2L twin-turbo V12,2,40
+96,Audi R8 V10 Performance,/s+/86.jpg, A,205,602,4, 5.2L naturally aspirated V10,2,40
+97,Nissan GT-R Nismo (R35),/s+/86.jpg, A,205,600,4, 3.8L twin-turbo V6,2,40
+98,Chevrolet Corvette Z06 (C8),/s+/86.jpg, A,195,670,5, 5.5L naturally aspirated flat-plane V8,2,40
+99,Ford GT (2017),/s+/86.jpg, A,216,660,5, 3.5L twin-turbo V6,2,40
+100,Mercedes-AMG GT Black Series,/s+/86.jpg, A,202,720,5, 4.0L twin-turbo V8,2,40
+101,Ferrari F8 Tributo,/s+/86.jpg, B,211,710,4, 3.9L twin-turbo V8,2,20
+102,Lamborghini Huracan Evo,/s+/86.jpg, B,202,631,4, 5.2L naturally aspirated V10,2,20
+103,McLaren 570S,/s+/86.jpg, B,204,562,4, 3.8L twin-turbo V8,2,20
+44,Mercedes-AMG A45 S,/s+/41.jpg, S,168,416,5, 2.0L turbo inline-4,1,25
+45,Audi RS3 Sportback,/s+/41.jpg, S,180,401,5, 2.5L turbo inline-5,1,25
+46,Hyundai i30 N,/s+/41.jpg, A,155,276,4, 2.0L turbo inline-4,1,40
+139,Toyota 4Runner TRD Pro,/s+/131.jpg, A,113,270,4, 4.0L naturally aspirated V6,3,40
+140,Jeep Grand Cherokee Trailhawk,/s+/131.jpg, A,131,357,4, 5.7L naturally aspirated V8,3,40
+141,Ford F-150 Raptor (Gen 3),/s+/131.jpg, A,114,450,4, 3.5L twin-turbo V6,3,40
+142,Land Rover Range Rover Sport SVR,/s+/131.jpg, A,176,575,4, 5.0L supercharged V8,3,40
+143,Lexus GX 460,/s+/131.jpg, A,110,301,3, 4.6L naturally aspirated V8,3,40
+144,Mitsubishi Pajero Evolution,/s+/131.jpg, A,118,276,4, 3.5L naturally aspirated V6,3,40
+145,Toyota Hilux GR Sport,/s+/131.jpg, A,109,221,4, 2.8L turbo diesel inline-4,3,40
+146,Jeep Gladiator Mojave,/s+/131.jpg, B,112,285,4, 3.6L naturally aspirated V6,3,20
+147,Suzuki Jimny (JB74),/s+/131.jpg, B,90,101,4, 1.5L naturally aspirated inline-4,3,20
+148,Ford Ranger Raptor,/s+/131.jpg, B,112,392,4, 3.0L twin-turbo V6,3,20
+149,Chevrolet Colorado ZR2,/s+/131.jpg, B,99,308,4, 3.6L naturally aspirated V6,3,20
+150,Nissan Frontier PRO-4X,/s+/131.jpg, B,112,310,3, 3.8L naturally aspirated V6,3,20
+151,Isuzu D-Max Arctic Trucks AT35,/s+/131.jpg, B,112,164,3, 1.9L turbo diesel inline-4,3,20
+152,Toyota Tacoma TRD Pro,/s+/131.jpg, B,113,278,4, 3.5L naturally aspirated V6,3,20
+153,Land Rover Discovery,/s+/131.jpg, B,130,355,3, 3.0L turbocharged inline-6,3,20
+154,Hummer H2,/s+/131.jpg, B,99,393,2, 6.0L naturally aspirated V8,3,20
+155,Jeep Cherokee XJ,/s+/131.jpg, B,112,190,3, 4.0L naturally aspirated inline-6,3,20
+156,Toyota Land Cruiser 80 Series,/s+/131.jpg, B,105,212,4, 4.5L naturally aspirated inline-6,3,20
+157,Land Rover Defender 110 (Classic),/s+/131.jpg, B,90,182,4, 3.5L naturally aspirated V8,3,20
+158,Ford Excursion,/s+/131.jpg, B,95,310,2, 6.8L naturally aspirated V10,3,20
+159,Nissan Xterra PRO-4X,/s+/131.jpg, B,112,261,3, 4.0L naturally aspirated V6,3,20
+241,Ford Mustang Mach 1 (2003),/s+/221.jpg, B,151,305,4, 4.6L naturally aspirated V8 DOHC,5,20
+242,Dodge Charger Daytona (1969),/s+/221.jpg, B,150,375,3, 7.0L naturally aspirated V8 HEMI,5,20
+243,Mercury Cougar Eliminator,/s+/221.jpg, B,125,290,3, 5.8L naturally aspirated V8,5,20
+244,Chevrolet Nova SS (1969),/s+/221.jpg, B,124,300,3, 5.7L naturally aspirated V8,5,20
+245,AMC Javelin AMX,/s+/221.jpg, B,125,315,3, 6.4L naturally aspirated V8,5,20
+246,Cadillac CTS-V (2nd Gen),/s+/221.jpg, B,191,556,4, 6.2L supercharged V8 LSA,5,20
+247,Ford Thunderbird Super Coupe,/s+/221.jpg, B,143,210,3, 3.8L supercharged V6,5,20
+248,Chevrolet Monte Carlo SS (1987),/s+/221.jpg, B,120,180,2, 5.0L naturally aspirated V8,5,20
+249,Dodge Magnum SRT8,/s+/221.jpg, B,170,425,3, 6.1L naturally aspirated V8 HEMI,5,20
+250,Chrysler 300C SRT8,/s+/221.jpg, B,173,470,3, 6.4L naturally aspirated V8 HEMI,5,20
+251,Ford Mustang Fox Body 5.0,/s+/221.jpg, C,140,225,3, 5.0L naturally aspirated V8 Windsor,5,15
+252,Chevrolet Camaro IROC-Z,/s+/221.jpg, C,137,245,3, 5.7L naturally aspirated V8 TPI,5,15
+253,Pontiac GTO (2004),/s+/221.jpg, C,160,350,3, 5.7L naturally aspirated V8 LS1,5,15
+254,Dodge Challenger SXT,/s+/221.jpg, C,143,303,2, 3.6L naturally aspirated V6 Pentastar,5,15
+255,Ford Mustang V6 (2014),/s+/221.jpg, C,155,305,3, 3.7L naturally aspirated V6 Cyclone,5,15
+256,Chevrolet Caprice Classic,/s+/221.jpg, C,115,170,2, 5.0L naturally aspirated V8,5,15
+480,Mitsubishi Lancer Evo IX,/s+/446.jpg, C,155,286,5, 2.0L turbo inline-4,10,15
+481,Subaru Impreza WRX STI,/s+/446.jpg, C,155,305,5, 2.5L turbo flat-4,10,15
+482,Ford Focus RS (Mk3),/s+/446.jpg, C,155,350,5, 2.3L turbo inline-4,10,15
+483,Volkswagen Golf R (Mk7),/s+/446.jpg, C,155,292,5, 2.0L turbo inline-4,10,15
+484,Toyota Celica GT-Four,/s+/446.jpg, C,143,225,5, 2.0L turbo inline-4,10,15
+485,Nissan 350Z Track Edition,/s+/446.jpg, C,155,306,5, 3.5L naturally aspirated V6,10,15
+486,Honda Integra Type R (DC5),/s+/446.jpg, C,143,217,5, 2.0L naturally aspirated inline-4,10,15
+487,Mazda MX-5 (NA),/s+/446.jpg, C,127,115,5, 1.6L naturally aspirated inline-4,10,15
+488,Ford Capri RS3100,/s+/446.jpg, C,130,230,4, 3.0L naturally aspirated V6,10,15
+489,Toyota Supra Mk3 Turbo,/s+/446.jpg, C,155,232,5, 2.5L turbo inline-6,10,15
+490,Subaru BRZ (1st Gen),/s+/446.jpg, C,140,200,5, 2.0L naturally aspirated flat-4,10,15
+160,Subaru Outback Wilderness,/s+/131.jpg, B,120,260,3, 2.4L turbo flat-4,3,20
+161,Suzuki Samurai,/s+/131.jpg, C,85,63,3, 1.3L naturally aspirated inline-4,3,15
+162,Jeep CJ-7,/s+/131.jpg, C,95,150,3, 4.2L naturally aspirated inline-6,3,15
+163,Toyota FJ Cruiser,/s+/131.jpg, C,110,260,4, 4.0L naturally aspirated V6,3,15
+164,Hummer H3,/s+/131.jpg, C,100,242,2, 3.7L naturally aspirated inline-5,3,15
+165,Mitsubishi Montero,/s+/131.jpg, C,105,200,3, 3.5L naturally aspirated V6,3,15
+166,Chevrolet Blazer K5,/s+/131.jpg, C,98,175,3, 5.7L naturally aspirated V8,3,15
+167,Ford Bronco (1995),/s+/131.jpg, C,100,210,3, 5.8L naturally aspirated V8,3,15
+168,Land Rover Freelander,/s+/131.jpg, C,112,174,2, 2.5L naturally aspirated V6,3,15
+169,Daihatsu Rocky,/s+/131.jpg, C,87,94,3, 1.6L naturally aspirated inline-4,3,15
+170,GMC Jimmy (1990s),/s+/131.jpg, C,98,190,2, 4.3L naturally aspirated V6,3,15
+171,Toyota RAV4 (Gen 1),/s+/131.jpg, C,105,120,3, 2.0L naturally aspirated inline-4,3,15
+172,Isuzu Trooper,/s+/131.jpg, C,100,190,3, 3.2L naturally aspirated V6,3,15
+173,Nissan Pathfinder (R50),/s+/131.jpg, C,112,240,3, 3.5L naturally aspirated V6,3,15
+174,Jeep Liberty,/s+/131.jpg, C,110,210,2, 3.7L naturally aspirated V6,3,15
+175,Suzuki Vitara (Classic),/s+/131.jpg, C,96,95,3, 1.6L naturally aspirated inline-4,3,15
+257,Plymouth Road Runner (383),/s+/221.jpg, C,130,335,3, 6.3L naturally aspirated V8 Magnum,5,15
+259,Oldsmobile Cutlass Supreme,/s+/221.jpg, C,115,180,2, 5.0L naturally aspirated V8,5,15
+260,Ford Crown Victoria Police Interceptor,/s+/221.jpg, C,129,250,2, 4.6L naturally aspirated V8,5,15
+261,Chevrolet El Camino SS,/s+/221.jpg, C,120,300,3, 5.7L naturally aspirated V8,5,15
+262,Dodge Dart Swinger 340,/s+/221.jpg, C,118,275,3, 5.6L naturally aspirated V8,5,15
+263,AMC Rebel Machine,/s+/221.jpg, C,127,340,3, 6.4L naturally aspirated V8,5,15
+264,Pontiac Grand Prix GXP,/s+/221.jpg, C,143,303,3, 5.3L naturally aspirated V8 LS4,5,15
+265,Chevrolet SS (2017),/s+/221.jpg, C,160,415,4, 6.2L naturally aspirated V8 LS3,5,15
+275,McLaren Artura,/s+/266.jpg, A,205,671,5, 3.0L twin-turbo V6 hybrid,6,40
+276,Porsche Cayenne Turbo S E-Hybrid,/s+/266.jpg, A,183,670,4, 4.0L twin-turbo V8 hybrid,6,40
+277,BMW XM Label Red,/s+/266.jpg, A,175,738,3, 4.4L twin-turbo V8 hybrid,6,40
+278,Mercedes-AMG GT 63 S E Performance,/s+/266.jpg, A,196,831,4, 4.0L twin-turbo V8 hybrid,6,40
+279,Lamborghini Sian FKP 37,/s+/266.jpg, A,217,819,4, 6.5L naturally aspirated V12 hybrid,6,40
+280,Aston Martin Valhalla,/s+/266.jpg, A,217,937,5, 4.0L twin-turbo V8 hybrid,6,40
+281,Toyota Prius Prime,/s+/266.jpg, B,101,220,3, 2.0L inline-4 hybrid,6,20
+282,Honda Accord Hybrid,/s+/266.jpg, B,116,204,3, 2.0L inline-4 hybrid,6,20
+283,Hyundai Ioniq Hybrid,/s+/266.jpg, B,115,139,3, 1.6L inline-4 hybrid,6,20
+284,Toyota Corolla Hybrid,/s+/266.jpg, B,112,138,3, 1.8L inline-4 hybrid,6,20
+285,Ford Escape Hybrid,/s+/266.jpg, B,124,200,3, 2.5L inline-4 hybrid,6,20
+286,Lexus RX 500h F Sport,/s+/266.jpg, B,130,366,3, 2.4L turbo inline-4 hybrid,6,20
+287,Kia Niro Hybrid,/s+/266.jpg, B,100,139,3, 1.6L inline-4 hybrid,6,20
+288,Toyota RAV4 Hybrid,/s+/266.jpg, B,111,219,3, 2.5L inline-4 hybrid,6,20
+289,Honda CR-V Hybrid,/s+/266.jpg, B,112,204,3, 2.0L inline-4 hybrid,6,20
+290,Lexus LC 500h,/s+/266.jpg, B,155,354,4, 3.5L V6 hybrid,6,20
+291,Infiniti Q50 Hybrid,/s+/266.jpg, B,155,360,3, 3.5L V6 hybrid,6,20
+292,Acura RLX Sport Hybrid,/s+/266.jpg, B,120,377,3, 3.5L V6 hybrid,6,20
+293,Toyota Highlander Hybrid,/s+/266.jpg, B,112,243,3, 2.5L inline-4 hybrid,6,20
+294,Ford Maverick Hybrid,/s+/266.jpg, B,110,191,3, 2.5L inline-4 hybrid,6,20
+295,Hyundai Sonata Hybrid,/s+/266.jpg, B,120,192,3, 2.0L inline-4 hybrid,6,20
+296,Honda Insight (2nd Gen),/s+/266.jpg, C,112,98,3, 1.3L inline-4 hybrid,6,15
+297,Toyota Camry Hybrid (2007),/s+/266.jpg, C,116,187,3, 2.4L inline-4 hybrid,6,15
+47,Toyota GR Corolla,/s+/41.jpg, A,143,300,5, 1.6L turbo inline-3,1,40
+48,Renault Megane RS Trophy,/s+/41.jpg, A,162,296,5, 1.8L turbo inline-4,1,40
+49,Peugeot 308 GTi,/s+/41.jpg, A,155,263,4, 1.6L turbo inline-4,1,40
+50,SEAT Leon Cupra R,/s+/41.jpg, A,155,306,4, 2.0L turbo inline-4,1,40
+51,Mini John Cooper Works GP,/s+/41.jpg, A,165,301,4, 2.0L turbo inline-4,1,40
+52,Subaru WRX STI (hatch),/s+/41.jpg, A,155,305,4, 2.5L turbo flat-4,1,40
+53,Mazda3 MPS,/s+/41.jpg, A,155,263,3, 2.3L turbo inline-4,1,40
+54,Opel Astra OPC,/s+/41.jpg, A,152,276,3, 2.0L turbo inline-4,1,40
+55,Honda Civic Type R (FK8),/s+/41.jpg, A,169,306,5, 2.0L turbo inline-4 VTEC,1,40
+56,Ford Fiesta ST,/s+/41.jpg, B,144,197,4, 1.5L turbo inline-3,1,20
+57,VW Golf GTI (Mk7),/s+/41.jpg, B,155,220,4, 2.0L turbo inline-4,1,20
+58,Hyundai Veloster N,/s+/41.jpg, B,155,275,4, 2.0L turbo inline-4,1,20
+59,Renault Clio RS,/s+/41.jpg, B,143,200,4, 1.6L turbo inline-4,1,20
+60,Toyota GR Yaris,/s+/41.jpg, B,143,268,5, 1.6L turbo inline-3,1,20
+61,Peugeot 208 GTi,/s+/41.jpg, B,143,197,3, 1.6L turbo inline-4,1,20
+62,Skoda Octavia vRS,/s+/41.jpg, B,155,245,3, 2.0L turbo inline-4,1,20
+63,Mini Cooper S,/s+/41.jpg, B,146,189,4, 2.0L turbo inline-4,1,20
+64,Audi S3 (8V),/s+/41.jpg, B,155,292,4, 2.0L turbo inline-4,1,20
+65,Ford Focus ST,/s+/41.jpg, B,155,252,4, 2.0L turbo inline-4,1,20
+66,Abarth 595 Competizione,/s+/41.jpg, B,140,180,3, 1.4L turbo inline-4,1,20
+67,Suzuki Swift Sport,/s+/41.jpg, B,130,138,4, 1.4L turbo inline-4,1,20
+68,Civic Si Hatch,/s+/41.jpg, B,137,200,4, 1.5L turbo inline-4,1,20
+69,Mazda3 Turbo,/s+/41.jpg, B,155,250,3, 2.5L turbo inline-4,1,20
+70,Cupra Leon,/s+/41.jpg, B,155,300,4, 2.0L turbo inline-4,1,20
+71,VW Polo GTI,/s+/41.jpg, C,147,197,3, 2.0L turbo inline-4,1,15
+72,Kia Ceed GT,/s+/41.jpg, C,143,201,3, 1.6L turbo inline-4,1,15
+73,Toyota Corolla T-Sport,/s+/41.jpg, C,140,189,3, 1.8L inline-4 VVT-i,1,15
+75,Ford Fiesta ST150,/s+/41.jpg, C,129,148,3, 2.0L inline-4,1,15
+76,VW Up GTI,/s+/41.jpg, C,122,113,4, 1.0L turbo inline-3,1,15
+77,Hyundai i20 N,/s+/41.jpg, C,143,201,4, 1.6L turbo inline-4,1,15
+78,Suzuki Ignis Sport,/s+/41.jpg, C,115,109,3, 1.5L inline-4,1,15
+79,Abarth Punto Evo,/s+/41.jpg, C,134,165,3, 1.4L turbo inline-4,1,15
+80,Chevrolet Sonic RS,/s+/41.jpg, C,125,138,2, 1.4L turbo inline-4,1,15
+81,Dodge Caliber SRT4,/s+/41.jpg, C,155,285,3, 2.4L turbo inline-4,1,15
+82,Proton Satria Neo R3,/s+/41.jpg, C,127,145,3, 1.6L inline-4,1,15
+83,Citroen DS3 Racing,/s+/41.jpg, C,146,207,3, 1.6L turbo inline-4,1,15
+84,Mitsubishi Colt Ralliart,/s+/41.jpg, C,131,148,3, 1.5L turbo inline-4,1,15
+85,Fiat Bravo T-Jet,/s+/41.jpg, C,135,150,2, 1.4L turbo inline-4,1,15
+41,Honda Civic Type R (FL5),/s+/41.jpg, S+,169,315,5, 2.0L turbo inline-4 VTEC,1,1
+42,Volkswagen Golf R (Mk8),/s+/41.jpg, S,155,315,5, 2.0L turbo inline-4,1,25
+43,Ford Focus RS (Mk3),/s+/41.jpg, S,165,350,4, 2.3L turbo inline-4,1,25
+104,Porsche 911 Carrera GTS (992),/s+/86.jpg, B,193,473,5, 3.0L twin-turbo flat-6,2,20
+105,Aston Martin Vantage,/s+/86.jpg, B,195,503,4, 4.0L twin-turbo V8,2,20
+106,Audi R8 V10,/s+/86.jpg, B,201,562,4, 5.2L naturally aspirated V10,2,20
+107,Nissan GT-R Premium,/s+/86.jpg, B,196,565,4, 3.8L twin-turbo V6,2,20
+298,Chevrolet Malibu Hybrid,/s+/266.jpg, C,115,182,3, 1.8L inline-4 hybrid,6,15
+299,Nissan Altima Hybrid,/s+/266.jpg, C,115,198,3, 2.5L inline-4 hybrid,6,15
+300,Lexus CT 200h,/s+/266.jpg, C,113,134,3, 1.8L inline-4 hybrid,6,15
+301,Toyota Prius (Gen 2),/s+/266.jpg, C,105,110,3, 1.5L inline-4 hybrid,6,15
+302,Honda CR-Z,/s+/266.jpg, C,124,130,4, 1.5L inline-4 hybrid,6,15
+303,Hyundai Elantra Hybrid,/s+/266.jpg, C,121,139,3, 1.6L inline-4 hybrid,6,15
+304,Kia Optima Hybrid,/s+/266.jpg, C,119,192,3, 2.0L inline-4 hybrid,6,15
+305,Ford Fusion Hybrid,/s+/266.jpg, C,112,188,3, 2.0L inline-4 hybrid,6,15
+306,Lexus ES 300h,/s+/266.jpg, C,112,215,3, 2.5L inline-4 hybrid,6,15
+307,Toyota Avalon Hybrid,/s+/266.jpg, C,116,215,3, 2.5L inline-4 hybrid,6,15
+308,Chevrolet Tahoe Hybrid,/s+/266.jpg, C,106,332,2, 6.0L V8 hybrid,6,15
+309,GMC Yukon Hybrid,/s+/266.jpg, C,106,332,2, 6.0L V8 hybrid,6,15
+310,BMW ActiveHybrid 3,/s+/266.jpg, C,155,335,3, 3.0L turbo inline-6 hybrid,6,15
+318,Aston Martin DBS (2009),/s+/311.jpg, A,191,510,4, 6.0L naturally aspirated V12,7,40
+319,Mercedes-Benz S65 AMG,/s+/311.jpg, A,155,621,3, 6.0L twin-turbo V12,7,40
+320,BMW M760Li,/s+/311.jpg, A,155,601,3, 6.6L twin-turbo V12,7,40
+321,Rolls-Royce Wraith,/s+/311.jpg, A,155,624,3, 6.6L twin-turbo V12,7,40
+322,Bentley Continental GT Speed (W12),/s+/311.jpg, A,208,650,3, 6.0L twin-turbo W12,7,40
+323,Ferrari 456 GT,/s+/311.jpg, A,186,436,4, 5.5L naturally aspirated V12,7,40
+324,Jaguar XJ12,/s+/311.jpg, A,143,318,3, 5.3L naturally aspirated V12,7,40
+325,Lamborghini Diablo SV,/s+/311.jpg, A,204,510,4, 5.7L naturally aspirated V12,7,40
+326,Ferrari 550 Maranello,/s+/311.jpg, B,199,478,4, 5.5L naturally aspirated V12,7,20
+327,Aston Martin Vanquish (2001),/s+/311.jpg, B,190,460,4, 5.9L naturally aspirated V12,7,20
+328,Lamborghini Countach 5000QV,/s+/311.jpg, B,183,449,4, 5.2L naturally aspirated V12,7,20
+329,Ferrari Testarossa,/s+/311.jpg, B,180,385,4, 4.9L naturally aspirated flat-12,7,20
+330,BMW 850CSi,/s+/311.jpg, B,155,375,3, 5.6L naturally aspirated V12,7,20
+331,Mercedes-Benz CL600 (C140),/s+/311.jpg, B,155,389,3, 6.0L naturally aspirated V12,7,20
+332,Aston Martin DB7 V12 Vantage,/s+/311.jpg, B,165,420,4, 5.9L naturally aspirated V12,7,20
+333,Ferrari 400i,/s+/311.jpg, B,149,310,3, 4.8L naturally aspirated V12,7,20
+334,Jaguar E-Type Series 3 V12,/s+/311.jpg, B,150,272,4, 5.3L naturally aspirated V12,7,20
+335,Lamborghini Espada,/s+/311.jpg, B,152,325,3, 3.9L naturally aspirated V12,7,20
+336,Ferrari 365 GTB/4 Daytona,/s+/311.jpg, B,174,352,4, 4.4L naturally aspirated V12,7,20
+337,Toyota Century (V12),/s+/311.jpg, B,130,276,3, 5.0L naturally aspirated V12,7,20
+338,Mercedes-Benz SL600 (R129),/s+/311.jpg, B,155,389,3, 6.0L naturally aspirated V12,7,20
+339,Pagani Zonda F,/s+/311.jpg, B,214,602,5, 7.3L naturally aspirated V12,7,20
+340,Ferrari 612 Scaglietti,/s+/311.jpg, B,199,533,4, 5.7L naturally aspirated V12,7,20
+341,Aston Martin Rapide S,/s+/311.jpg, C,190,552,3, 5.9L naturally aspirated V12,7,15
+342,Ferrari GTC4Lusso V12,/s+/311.jpg, C,208,680,4, 6.3L naturally aspirated V12,7,15
+343,Lamborghini Jarama,/s+/311.jpg, C,161,350,3, 3.9L naturally aspirated V12,7,15
+344,BMW 750iL (E38 V12),/s+/311.jpg, C,155,322,3, 5.4L naturally aspirated V12,7,15
+345,Mercedes-Benz S600 (W220),/s+/311.jpg, C,155,493,3, 5.5L twin-turbo V12,7,15
+346,Rolls-Royce Phantom (VII),/s+/311.jpg, C,149,453,2, 6.75L naturally aspirated V12,7,15
+347,Bentley Azure,/s+/311.jpg, C,155,385,2, 6.75L turbocharged V8,7,15
+348,Ferrari 348 Competizione,/s+/311.jpg, C,171,320,4, 3.4L naturally aspirated V8,7,15
+349,Lamborghini 400GT,/s+/311.jpg, C,155,320,3, 3.9L naturally aspirated V12,7,15
+350,Aston Martin DB9,/s+/311.jpg, C,183,450,4, 5.9L naturally aspirated V12,7,15
+351,Mercedes-Maybach S680,/s+/311.jpg, C,155,621,3, 6.0L twin-turbo V12,7,15
+352,Ferrari 575M Maranello,/s+/311.jpg, C,202,508,4, 5.7L naturally aspirated V12,7,15
+353,Jaguar XJS V12,/s+/311.jpg, C,143,295,3, 5.3L naturally aspirated V12,7,15
+354,Lamborghini Islero,/s+/311.jpg, C,155,325,3, 4.0L naturally aspirated V12,7,15
+355,BMW 850i (E31),/s+/311.jpg, C,155,296,3, 5.0L naturally aspirated V12,7,15
+379,Acura TLX Type S,/s+/356.jpg, B,155,355,4, 3.0L turbo V6,8,20
+380,Audi S7,/s+/356.jpg, B,155,444,4, 2.9L twin-turbo V6,8,20
+381,BMW 640i Gran Coupe,/s+/356.jpg, B,155,315,3, 3.0L turbo inline-6,8,20
+382,Jaguar XF S,/s+/356.jpg, B,155,380,4, 3.0L supercharged V6,8,20
+383,Mercedes-Benz CLS 450,/s+/356.jpg, B,155,362,3, 3.0L turbo inline-6 mild-hybrid,8,20
+384,Porsche 911 Carrera,/s+/356.jpg, B,182,379,5, 3.0L twin-turbo flat-6,8,20
+385,Aston Martin V8 Vantage (2005),/s+/356.jpg, B,175,380,4, 4.3L naturally aspirated V8,8,20
+386,Hyundai Genesis Coupe 3.8,/s+/356.jpg, C,149,348,3, 3.8L naturally aspirated V6,8,15
+387,Toyota Camry TRD,/s+/356.jpg, C,135,301,3, 3.5L naturally aspirated V6,8,15
+388,Honda Accord V6 Coupe,/s+/356.jpg, C,145,278,3, 3.5L naturally aspirated V6,8,15
+389,Chevrolet Impala (2019),/s+/356.jpg, C,154,305,3, 3.6L naturally aspirated V6,8,15
+390,Ford Taurus SHO,/s+/356.jpg, C,143,365,3, 3.5L twin-turbo V6 EcoBoost,8,15
+391,Mazda6 Turbo,/s+/356.jpg, C,130,250,4, 2.5L turbo inline-4,8,15
+392,Volkswagen Arteon R-Line,/s+/356.jpg, C,130,300,3, 2.0L turbo inline-4,8,15
+393,Subaru Legacy XT,/s+/356.jpg, C,130,260,3, 2.4L turbo flat-4,8,15
+394,Buick Regal GS,/s+/356.jpg, C,162,310,3, 3.6L naturally aspirated V6,8,15
+395,Dodge Charger GT,/s+/356.jpg, C,147,300,3, 3.6L naturally aspirated V6 Pentastar,8,15
+396,Chrysler Crossfire,/s+/356.jpg, C,155,215,3, 3.2L naturally aspirated V6,8,15
+397,Cadillac Eldorado ETC,/s+/356.jpg, C,140,300,2, 4.6L naturally aspirated V8 Northstar,8,15
+398,Lincoln Mark VIII,/s+/356.jpg, C,143,290,3, 4.6L naturally aspirated V8 DOHC,8,15
+399,Pontiac Grand Touring Sedan G8,/s+/356.jpg, C,160,361,4, 6.0L naturally aspirated V8,8,15
+400,Saab 9-3 Turbo X,/s+/356.jpg, C,155,280,3, 2.8L turbocharged V6,8,15
+424,Toyota Celica GT-S,/s+/401.jpg, B,140,180,4, 1.8L naturally aspirated inline-4,9,20
+425,Mazda RX-8,/s+/401.jpg, B,146,232,4, 1.3L twin-rotor rotary,9,20
+426,Mitsubishi Eclipse GSX,/s+/401.jpg, B,140,210,4, 2.0L turbo inline-4,9,20
+427,Volkswagen Golf R (Mk7),/s+/401.jpg, B,155,292,4, 2.0L turbo inline-4,9,20
+428,Ford Focus ST,/s+/401.jpg, B,155,252,4, 2.3L turbo inline-4,9,20
+429,Seat Leon Cupra,/s+/401.jpg, B,155,296,4, 2.0L turbo inline-4,9,20
+430,Hyundai i30 N,/s+/401.jpg, B,155,276,4, 2.0L turbo inline-4,9,20
+431,Suzuki Swift Sport (pre-2020),/s+/401.jpg, C,125,136,4, 1.6L naturally aspirated inline-4,9,15
+432,Peugeot 206 GTi,/s+/401.jpg, C,125,138,4, 2.0L naturally aspirated inline-4,9,15
+433,Fiat Punto Abarth,/s+/401.jpg, C,130,180,4, 1.4L turbo inline-4,9,15
+434,Honda CR-X Si,/s+/401.jpg, C,125,160,4, 1.6L naturally aspirated inline-4,9,15
+435,Toyota Starlet Glanza V,/s+/401.jpg, C,130,133,4, 1.3L turbo inline-4,9,15
+436,Ford Fiesta XR2i,/s+/401.jpg, C,116,110,3, 1.6L naturally aspirated inline-4,9,15
+437,Opel Corsa OPC,/s+/401.jpg, C,137,207,4, 1.6L turbo inline-4,9,15
+438,Renault Twingo RS,/s+/401.jpg, C,120,133,4, 1.0L turbo inline-3,9,15
+439,Citroen DS3 Racing,/s+/401.jpg, C,137,207,4, 1.6L turbo inline-4,9,15
+440,Nissan Micra Super Turbo,/s+/401.jpg, C,124,110,3, 1.0L turbo inline-3,9,15
+131,Jeep Wrangler Rubicon 392,/s+/131.jpg, S+,112,470,5, 6.4L naturally aspirated V8,3,1
+132,Ford Bronco Raptor,/s+/131.jpg, S,114,418,5, 3.0L twin-turbo V6,3,25
+133,Land Rover Defender 90 V8,/s+/131.jpg, S,149,518,4, 5.0L supercharged V8,3,25
+134,Toyota Land Cruiser 300,/s+/131.jpg, S,130,409,4, 3.5L twin-turbo V6,3,25
+135,Mercedes-AMG G63,/s+/131.jpg, S,137,577,4, 4.0L twin-turbo V8,3,25
+136,RAM 1500 TRX,/s+/131.jpg, A,118,702,4, 6.2L supercharged V8,3,40
+137,Chevrolet Silverado ZR2 Bison,/s+/131.jpg, A,114,420,4, 6.2L naturally aspirated V8,3,40
+138,Nissan Patrol Nismo,/s+/131.jpg, A,130,428,3, 5.6L naturally aspirated V8,3,40
+108,Chevrolet Corvette Stingray (C8),/s+/86.jpg, B,194,495,5, 6.2L naturally aspirated V8,2,20
+109,Jaguar F-Type R,/s+/86.jpg, B,186,575,4, 5.0L supercharged V8,2,20
+110,BMW M8 Competition,/s+/86.jpg, B,190,617,4, 4.4L twin-turbo V8,2,20
+111,Lexus LC 500,/s+/86.jpg, B,168,471,4, 5.0L naturally aspirated V8,2,20
+112,Maserati MC20,/s+/86.jpg, B,202,621,4, 3.0L twin-turbo V6,2,20
+113,Acura NSX (2nd Gen),/s+/86.jpg, B,191,573,5, 3.5L twin-turbo V6 hybrid,2,20
+114,Bentley Continental GT Speed,/s+/86.jpg, B,208,650,3, 6.0L twin-turbo W12,2,20
+115,Ferrari California T,/s+/86.jpg, B,196,553,3, 3.9L twin-turbo V8,2,20
+116,Alpine A110,/s+/86.jpg, C,155,252,5, 1.8L turbo inline-4,2,15
+117,Toyota Supra (A90),/s+/86.jpg, C,155,382,4, 3.0L turbo inline-6,2,15
+118,BMW Z4 M40i,/s+/86.jpg, C,155,382,4, 3.0L turbo inline-6,2,15
+119,Audi TTRS,/s+/86.jpg, C,174,394,4, 2.5L turbo inline-5,2,15
+120,Porsche Cayman GTS 4.0,/s+/86.jpg, C,182,394,5, 4.0L naturally aspirated flat-6,2,15
+121,Lotus Emira V6,/s+/86.jpg, C,180,400,5, 3.5L supercharged V6,2,15
+122,Chevrolet Camaro ZL1,/s+/86.jpg, C,198,650,4, 6.2L supercharged V8,2,15
+123,Dodge Viper (Gen V),/s+/86.jpg, C,206,645,4, 8.4L naturally aspirated V10,2,15
+124,Ferrari 360 Modena,/s+/86.jpg, C,183,395,4, 3.6L naturally aspirated V8,2,15
+125,Lamborghini Gallardo,/s+/86.jpg, C,196,493,4, 5.0L naturally aspirated V10,2,15
+126,Audi R8 (Gen 1),/s+/86.jpg, C,187,414,4, 4.2L naturally aspirated V8,2,15
+127,Mercedes SLS AMG,/s+/86.jpg, C,197,563,4, 6.2L naturally aspirated V8,2,15
+128,Nissan GT-R (R34),/s+/86.jpg, C,165,276,4, 2.6L twin-turbo inline-6,2,15
+129,Honda NSX (NA1),/s+/86.jpg, C,168,270,5, 3.0L naturally aspirated V6,2,15
+130,Porsche 911 Carrera (993),/s+/86.jpg, C,171,282,4, 3.6L naturally aspirated flat-6,2,15
+176,Toyota Supra Mk4 (A80),/s+/176.jpg, S+,177,276,5, 3.0L twin-turbo inline-6 2JZ-GTE,4,1
+177,Nissan Skyline GT-R R34,/s+/176.jpg, S,165,276,5, 2.6L twin-turbo inline-6 RB26DETT,4,25
+178,Honda NSX Type R (NA2),/s+/176.jpg, S,174,290,5, 3.2L naturally aspirated V6 VTEC,4,25
+179,Mazda RX-7 FD3S,/s+/176.jpg, S,156,276,5, 1.3L twin-rotor twin-turbo rotary,4,25
+180,Nissan GT-R R32,/s+/176.jpg, S,156,276,5, 2.6L twin-turbo inline-6 RB26DETT,4,25
+181,Mitsubishi Lancer Evolution VI,/s+/176.jpg, A,149,276,5, 2.0L turbo inline-4 4G63,4,40
+182,Subaru Impreza WRX STI (GC8),/s+/176.jpg, A,150,276,5, 2.0L turbo flat-4 EJ20,4,40
+183,Toyota AE86 Sprinter Trueno,/s+/176.jpg, A,124,128,5, 1.6L naturally aspirated inline-4 4A-GE,4,40
+184,Nissan Silvia S15 Spec-R,/s+/176.jpg, A,155,247,4, 2.0L turbo inline-4 SR20DET,4,40
+185,Honda Civic Type R (EK9),/s+/176.jpg, A,140,182,5, 1.6L naturally aspirated inline-4 B16B,4,40
+186,Toyota Celica GT-Four (ST205),/s+/176.jpg, A,152,255,4, 2.0L turbo inline-4 3S-GTE,4,40
+187,Mazda RX-8,/s+/176.jpg, A,146,232,4, 1.3L twin-rotor RENESIS rotary,4,40
+188,Nissan 300ZX Twin Turbo (Z32),/s+/176.jpg, A,155,300,4, 3.0L twin-turbo V6 VG30DETT,4,40
+189,Mitsubishi 3000GT VR-4,/s+/176.jpg, A,155,300,4, 3.0L twin-turbo V6 6G72,4,40
+190,Subaru Legacy GT-B,/s+/176.jpg, A,149,276,4, 2.0L twin-turbo flat-4 EJ20,4,40
+191,Honda S2000 (AP1),/s+/176.jpg, B,150,240,5, 2.0L naturally aspirated inline-4 F20C,4,20
+192,Toyota MR2 Turbo (SW20),/s+/176.jpg, B,150,200,4, 2.0L turbo inline-4 3S-GTE,4,20
+193,Nissan 350Z,/s+/176.jpg, B,155,287,4, 3.5L naturally aspirated V6 VQ35DE,4,20
+194,Mazda MX-5 Miata (NA),/s+/176.jpg, B,116,116,5, 1.6L naturally aspirated inline-4 B6,4,20
+195,Toyota Chaser JZX100,/s+/176.jpg, B,155,276,4, 2.5L turbo inline-6 1JZ-GTE,4,20
+196,Nissan Fairlady Z (S30),/s+/176.jpg, B,130,151,4, 2.4L naturally aspirated inline-6 L24,4,20
+197,Honda Integra Type R (DC2),/s+/176.jpg, B,145,197,5, 1.8L naturally aspirated inline-4 B18C,4,20
+198,Mitsubishi Eclipse GSX (2G),/s+/176.jpg, B,140,210,4, 2.0L turbo inline-4 4G63T,4,20
+199,Subaru BRZ (1st Gen),/s+/176.jpg, B,140,200,4, 2.0L naturally aspirated flat-4 FA20,4,20
+221,Dodge Challenger SRT Demon 170,/s+/221.jpg, S+,151,1025,3, 6.2L supercharged V8 HEMI,5,1
+222,Ford Mustang Shelby GT500 (2020),/s+/221.jpg, S,180,760,4, 5.2L supercharged V8 Predator,5,25
+223,Chevrolet Camaro ZL1 1LE,/s+/221.jpg, S,198,650,5, 6.2L supercharged V8 LT4,5,25
+224,Dodge Charger SRT Hellcat Redeye,/s+/221.jpg, S,203,797,3, 6.2L supercharged V8 HEMI,5,25
+225,Chevrolet Corvette ZR1 (C7),/s+/221.jpg, S,212,755,5, 6.2L supercharged V8 LT5,5,25
+226,Plymouth Hemi Cuda (1970),/s+/221.jpg, A,155,425,3, 7.0L naturally aspirated V8 HEMI,5,40
+227,Ford Mustang Boss 429 (1969),/s+/221.jpg, A,140,375,3, 7.0L naturally aspirated V8 Boss,5,40
+228,Chevrolet Chevelle SS 454,/s+/221.jpg, A,135,450,3, 7.4L naturally aspirated V8 LS6,5,40
+229,Dodge Charger R/T (1969),/s+/221.jpg, A,130,425,3, 7.0L naturally aspirated V8 HEMI,5,40
+230,Pontiac GTO Judge (1970),/s+/221.jpg, A,130,366,3, 6.6L naturally aspirated V8 Ram Air,5,40
+231,Shelby GT350 (1965),/s+/221.jpg, A,135,306,4, 4.7L naturally aspirated V8 Windsor,5,40
+232,Oldsmobile 442 (1970),/s+/221.jpg, A,130,370,3, 7.5L naturally aspirated V8 Rocket,5,40
+233,Buick GSX Stage 1,/s+/221.jpg, A,132,360,3, 7.5L naturally aspirated V8 Stage1,5,40
+234,Ford Torino Cobra,/s+/221.jpg, A,135,375,3, 7.0L naturally aspirated V8 Cobra Jet,5,40
+235,Dodge Challenger R/T (1970),/s+/221.jpg, A,135,375,3, 6.3L naturally aspirated V8 Magnum,5,40
+236,Ford Mustang GT (S550),/s+/221.jpg, B,155,460,4, 5.0L naturally aspirated V8 Coyote,5,20
+237,Chevrolet Camaro SS (6th Gen),/s+/221.jpg, B,165,455,4, 6.2L naturally aspirated V8 LT1,5,20
+238,Dodge Challenger R/T Scat Pack,/s+/221.jpg, B,175,485,3, 6.4L naturally aspirated V8 HEMI,5,20
+239,Pontiac Firebird Trans Am (1977),/s+/221.jpg, B,120,200,3, 6.6L naturally aspirated V8,5,20
+240,Chevrolet Impala SS (1996),/s+/221.jpg, B,142,260,3, 5.7L naturally aspirated V8 LT1,5,20
+258,Buick Regal GS (1987),/s+/221.jpg, C,124,245,3, 3.8L turbocharged V6,5,15
+266,Ferrari LaFerrari,/s+/266.jpg, S+,217,949,5, 6.3L naturally aspirated V12 hybrid,6,1
+267,McLaren P1,/s+/266.jpg, S,217,903,5, 3.8L twin-turbo V8 hybrid,6,25
+268,Porsche 918 Spyder,/s+/266.jpg, S,214,887,5, 4.6L naturally aspirated V8 hybrid,6,25
+269,Mercedes-AMG One,/s+/266.jpg, S,219,1063,5, 1.6L turbo V6 F1 hybrid,6,25
+270,Ferrari SF90 Stradale,/s+/266.jpg, S,211,986,5, 4.0L twin-turbo V8 hybrid,6,25
+271,Lamborghini Revuelto,/s+/266.jpg, A,217,1001,5, 6.5L naturally aspirated V12 hybrid,6,40
+272,Acura NSX (2nd Gen),/s+/266.jpg, A,191,573,5, 3.5L twin-turbo V6 hybrid,6,40
+273,BMW i8,/s+/266.jpg, A,155,369,4, 1.5L turbo inline-3 hybrid,6,40
+274,Ferrari 296 GTB,/s+/266.jpg, A,205,819,5, 3.0L twin-turbo V6 hybrid,6,40
+311,Ferrari 812 Superfast,/s+/311.jpg, S+,211,789,5, 6.5L naturally aspirated V12,7,1
+312,Lamborghini Aventador SVJ,/s+/311.jpg, S,217,759,4, 6.5L naturally aspirated V12,7,25
+313,Aston Martin Valkyrie,/s+/311.jpg, S,250,1160,5, 6.5L naturally aspirated V12 hybrid,7,25
+314,Pagani Huayra,/s+/311.jpg, S,238,720,5, 6.0L twin-turbo V12,7,25
+315,Ferrari F12tdf,/s+/311.jpg, S,211,769,5, 6.3L naturally aspirated V12,7,25
+316,Lamborghini Murcielago SV,/s+/311.jpg, A,212,661,4, 6.5L naturally aspirated V12,7,40
+317,Ferrari 599 GTO,/s+/311.jpg, A,208,661,5, 6.0L naturally aspirated V12,7,40
+356,Aston Martin DB11 AMR,/s+/356.jpg, S+,208,630,5, 5.2L twin-turbo V12,8,1
+357,Ferrari Roma,/s+/356.jpg, S,199,612,5, 3.9L twin-turbo V8,8,25
+358,Bentley Continental GT Speed,/s+/356.jpg, S,208,650,4, 6.0L twin-turbo W12,8,25
+359,Porsche Panamera Turbo S,/s+/356.jpg, S,196,620,5, 4.0L twin-turbo V8,8,25
+360,Mercedes-AMG SL63 (R232),/s+/356.jpg, S,196,577,5, 4.0L twin-turbo V8,8,25
+361,BMW M850i xDrive,/s+/356.jpg, A,155,523,4, 4.4L twin-turbo V8,8,40
+362,Lexus LC 500,/s+/356.jpg, A,168,471,4, 5.0L naturally aspirated V8,8,40
+363,Jaguar F-Type P450,/s+/356.jpg, A,177,444,4, 5.0L supercharged V8,8,40
+364,Maserati GranTurismo Trofeo,/s+/356.jpg, A,199,542,4, 3.0L twin-turbo V6 Nettuno,8,40
+365,Audi RS7 Sportback,/s+/356.jpg, A,190,591,4, 4.0L twin-turbo V8,8,40
+366,Alfa Romeo Giulia Quadrifoglio,/s+/356.jpg, A,191,505,5, 2.9L twin-turbo V6,8,40
+367,BMW M5 Competition,/s+/356.jpg, A,190,617,4, 4.4L twin-turbo V8,8,40
+368,Cadillac CT5-V Blackwing,/s+/356.jpg, A,200,668,5, 6.2L supercharged V8,8,40
+369,Genesis G90 3.5T,/s+/356.jpg, A,155,375,3, 3.5L twin-turbo V6,8,40
+370,Lexus LS 500,/s+/356.jpg, A,136,416,3, 3.5L twin-turbo V6,8,40
+371,Chrysler 300C,/s+/356.jpg, B,155,363,3, 5.7L naturally aspirated V8 HEMI,8,20
+372,Ford Mustang GT Convertible,/s+/356.jpg, B,155,460,4, 5.0L naturally aspirated V8 Coyote,8,20
+373,Chevrolet Corvette (C7 Stingray),/s+/356.jpg, B,190,455,5, 6.2L naturally aspirated V8 LT1,8,20
+374,Infiniti Q60 Red Sport 400,/s+/356.jpg, B,155,400,4, 3.0L twin-turbo V6,8,20
+375,Volvo S90 T8 Recharge,/s+/356.jpg, B,112,455,3, 2.0L turbocharged inline-4 hybrid,8,20
+376,Kia Stinger GT,/s+/356.jpg, B,167,368,4, 3.3L twin-turbo V6,8,20
+377,Toyota Supra (A90),/s+/356.jpg, B,155,382,4, 3.0L turbo inline-6,8,20
+378,Nissan 400Z,/s+/356.jpg, B,155,400,4, 3.0L twin-turbo V6,8,20
+401,Mazda MX-5 Miata (ND),/s+/401.jpg, S+,135,181,5, 2.0L naturally aspirated inline-4,9,1
+402,Toyota 86 / Subaru BRZ,/s+/401.jpg, S,140,205,5, 2.4L naturally aspirated flat-4,9,25
+403,Honda Civic Si (10th Gen),/s+/401.jpg, S,137,205,4, 1.5L turbo inline-4,9,25
+404,Volkswagen Golf GTI (Mk8),/s+/401.jpg, S,155,241,4, 2.0L turbo inline-4,9,25
+405,Ford Fiesta ST,/s+/401.jpg, S,144,197,5, 1.5L turbo inline-3,9,25
+406,Mini Cooper S,/s+/401.jpg, A,153,189,4, 2.0L turbo inline-4,9,40
+407,Hyundai Veloster N,/s+/401.jpg, A,155,275,4, 2.0L turbo inline-4,9,40
+408,Kia Forte GT,/s+/401.jpg, A,155,201,4, 1.6L turbo inline-4,9,40
+409,Volkswagen Polo GTI,/s+/401.jpg, A,137,197,4, 2.0L turbo inline-4,9,40
+410,Toyota Yaris GR,/s+/401.jpg, A,143,257,5, 1.6L turbo inline-3,9,40
+411,Honda S2000,/s+/401.jpg, A,150,240,5, 2.0L naturally aspirated inline-4 F20C,9,40
+412,Mazda MX-5 (NB),/s+/401.jpg, A,130,140,5, 1.8L naturally aspirated inline-4,9,40
+413,Suzuki Swift Sport,/s+/401.jpg, A,136,138,4, 1.4L turbo inline-4,9,40
+414,Ford Puma ST,/s+/401.jpg, A,143,197,5, 1.5L turbo inline-3,9,40
+415,Volkswagen Scirocco R,/s+/401.jpg, A,155,276,4, 2.0L turbo inline-4,9,40
+416,Fiat 124 Spider,/s+/401.jpg, B,130,164,5, 1.4L turbo inline-4,9,20
+417,Toyota MR2 Spyder,/s+/401.jpg, B,145,138,4, 1.8L naturally aspirated inline-4,9,20
+418,Peugeot 208 GTi,/s+/401.jpg, B,137,197,4, 1.6L turbo inline-4,9,20
+419,Renault Clio RS,/s+/401.jpg, B,142,220,4, 1.6L turbo inline-4,9,20
+420,Ford Mustang EcoBoost,/s+/401.jpg, B,155,310,4, 2.3L turbo inline-4,9,20
+421,Honda Civic Type R (FK8),/s+/401.jpg, B,169,306,5, 2.0L turbo inline-4,9,20
+422,Nissan 370Z,/s+/401.jpg, B,155,350,4, 3.7L naturally aspirated V6,9,20
+423,Subaru BRZ (1st Gen),/s+/401.jpg, B,140,200,4, 2.0L naturally aspirated flat-4,9,20
+441,Toyota Yaris GRMN,/s+/401.jpg, C,132,210,4, 1.8L turbo inline-4,9,15
+442,Ford Puma 1.0 EcoBoost,/s+/401.jpg, C,130,200,4, 1.0L turbo inline-3,9,15
+443,Hyundai i20 N,/s+/401.jpg, C,136,204,4, 1.6L turbo inline-4,9,15
+444,Suzuki Swift GTI,/s+/401.jpg, C,125,134,4, 1.3L naturally aspirated inline-4,9,15
+445,Volkswagen Polo GTI (Mk5),/s+/401.jpg, C,137,189,4, 1.8L turbo inline-4,9,15
+446,BMW M3 GTR (E46),/s+/446.jpg, S+,174,493,5, 4.0L naturally aspirated V8,10,1
+447,Porsche 911 GT3 RS (991.2),/s+/446.jpg, S,193,520,5, 4.0L naturally aspirated flat-6,10,25
+448,Ferrari 488 Pista,/s+/446.jpg, S,211,710,5, 3.9L twin-turbo V8,10,25
+449,McLaren 720S,/s+/446.jpg, S,212,710,5, 4.0L twin-turbo V8,10,25
+450,Lamborghini Huracán Performante,/s+/446.jpg, S,202,631,5, 5.2L naturally aspirated V10,10,25
+451,Audi R8 V10 Performance,/s+/446.jpg, A,205,602,5, 5.2L naturally aspirated V10,10,40
+452,Mercedes-AMG GT R Pro,/s+/446.jpg, A,198,577,5, 4.0L twin-turbo V8,10,40
+453,Nissan GT-R Nismo,/s+/446.jpg, A,196,600,5, 3.8L twin-turbo V6,10,40
+454,Chevrolet Corvette Z06 (C8),/s+/446.jpg, A,198,670,5, 5.5L naturally aspirated V8,10,40
+455,Ford Mustang Shelby GT500,/s+/446.jpg, A,180,760,4, 5.2L supercharged V8,10,40
+456,Toyota GR Supra GT4,/s+/446.jpg, A,155,382,5, 3.0L turbo inline-6,10,40
+457,Maserati MC20,/s+/446.jpg, A,202,621,5, 3.0L twin-turbo V6,10,40
