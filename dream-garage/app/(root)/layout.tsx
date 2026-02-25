@@ -75,63 +75,70 @@ export default function RootLayout({
     checkPoints()
   }, [path])
 
+  const isGarage = path === '/garage'
+  const isShop = path === '/'
+
   return (
     <div>
-      <div className="w-full flex justify-between py-2">
-        <div className="ps-3 w-45">
-          <Image src="/dg.png" alt="Dream Garage logo" height={30} width={30} />
+      <header className="sticky top-0 z-40 w-full bg-white/60 backdrop-blur-md border-b border-border/40">
+        <div className="max-w-7xl mx-auto flex justify-between items-center px-4 py-3">
+          <div className="w-32">
+            <Image src="/dg.png" alt="Dream Garage logo" height={32} width={32} />
+          </div>
+          <NavigationMenu>
+            <NavigationMenuList className="gap-1">
+              <NavigationMenuItem>
+                <NavigationMenuLink className="p-0 bg-transparent hover:bg-transparent focus:bg-transparent">
+                  <Tooltip>
+                    <TooltipTrigger asChild>
+                      <Link
+                        href="/garage"
+                        className={`flex items-center gap-1.5 px-3 py-2 rounded-lg text-sm font-medium transition-colors ${
+                          isGarage
+                            ? 'bg-primary text-primary-foreground'
+                            : 'text-muted-foreground hover:text-foreground hover:bg-muted'
+                        }`}
+                      >
+                        <CarIcon size={16} />
+                        <span>Garage</span>
+                      </Link>
+                    </TooltipTrigger>
+                    <TooltipContent>
+                      <p>Garage</p>
+                    </TooltipContent>
+                  </Tooltip>
+                </NavigationMenuLink>
+              </NavigationMenuItem>
+              <NavigationMenuItem>
+                <NavigationMenuLink className="p-0 bg-transparent hover:bg-transparent focus:bg-transparent">
+                  <Tooltip>
+                    <TooltipTrigger asChild>
+                      <Link
+                        href="/"
+                        className={`flex items-center gap-1.5 px-3 py-2 rounded-lg text-sm font-medium transition-colors ${
+                          isShop
+                            ? 'bg-primary text-primary-foreground'
+                            : 'text-muted-foreground hover:text-foreground hover:bg-muted'
+                        }`}
+                      >
+                        <ToolboxIcon size={16} />
+                        <span>Shop</span>
+                      </Link>
+                    </TooltipTrigger>
+                    <TooltipContent>
+                      <p>Shop</p>
+                    </TooltipContent>
+                  </Tooltip>
+                </NavigationMenuLink>
+              </NavigationMenuItem>
+            </NavigationMenuList>
+          </NavigationMenu>
+          <div className="w-32 flex justify-end items-center gap-1.5 text-sm font-semibold">
+            <span>{user.points}</span>
+            <CurrencyIcon size={16} className="text-accent" />
+          </div>
         </div>
-        <NavigationMenu>
-          <NavigationMenuList className="w-full">
-            <NavigationMenuItem>
-              <NavigationMenuLink>
-                <Tooltip>
-                  <TooltipTrigger asChild>
-                    <Link href="/garage">
-                      <CarIcon />
-                    </Link>
-                  </TooltipTrigger>
-                  <TooltipContent>
-                    <p>Garage</p>
-                  </TooltipContent>
-                </Tooltip>
-              </NavigationMenuLink>
-            </NavigationMenuItem>
-            <NavigationMenuItem>
-              <NavigationMenuLink>
-                <Tooltip>
-                  <TooltipTrigger asChild>
-                    <Link href="/">
-                      <ToolboxIcon />
-                    </Link>
-                  </TooltipTrigger>
-                  <TooltipContent>
-                    <p>Shop</p>
-                  </TooltipContent>
-                </Tooltip>
-              </NavigationMenuLink>
-            </NavigationMenuItem>
-            {/* <NavigationMenuItem>
-              <NavigationMenuLink>
-                <Tooltip>
-                  <TooltipTrigger asChild>
-                    <Link href="/race">
-                      <FlagIcon />
-                    </Link>
-                  </TooltipTrigger>
-                  <TooltipContent>
-                    <p>Race</p>
-                  </TooltipContent>
-                </Tooltip>
-              </NavigationMenuLink>
-            </NavigationMenuItem> */}
-          </NavigationMenuList>
-        </NavigationMenu>
-        <div className="font-size-sm w-45 flex justify-end align-middle pe-3">
-          {user.points}
-          <CurrencyIcon className="ms-2" />
-        </div>
-      </div>
+      </header>
 
       <Modal
         showModal={dailyModal}
@@ -176,14 +183,9 @@ export default function RootLayout({
         </div>
       </Modal>
 
-      <style jsx>{`
-        .mask {
-          background-color: red !important;
-          filter: blur(10px);
-        }
-      `}</style>
-
-      {children}
+      <main className="max-w-7xl mx-auto px-4 pb-12">
+        {children}
+      </main>
     </div>
   )
 }

@@ -18,16 +18,25 @@ export default function Modal({
     <>
       {showModal &&
         createPortal(
-          <div className="bg-background fixed border-1 border-solid border-secondary left-1/4 top-1/4 w-1/2 min-h-1/2 rounded-xl shadow-md/40 z-50">
-            <div className="flex justify-between py-2 text-center font-semibold">
-              <div className="w-10"></div>
-              <h3 className="">{title}</h3>
-              <div className="w-10">
-                <XIcon className="cursor-pointer" onClick={() => onClose()} />
+          <div
+            className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm"
+            onClick={onClose}
+          >
+            <div
+              className="animate-modal-enter bg-background relative w-full max-w-2xl max-h-[90vh] overflow-y-auto rounded-2xl border border-border shadow-2xl mx-4"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <div className="flex items-center justify-between px-5 py-4 border-b border-border/60">
+                <div className="w-6" />
+                <h3>{title}</h3>
+                <XIcon
+                  className="cursor-pointer text-muted-foreground hover:text-foreground transition-colors"
+                  size={18}
+                  onClick={() => onClose()}
+                />
               </div>
+              <div className="p-4">{children}</div>
             </div>
-            <hr />
-            {children}
           </div>,
           document.body
         )}
