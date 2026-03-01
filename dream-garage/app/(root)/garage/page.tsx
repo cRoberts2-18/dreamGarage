@@ -2,13 +2,23 @@
 import { Label } from '@/components/ui/label'
 import { Switch } from '@/components/ui/switch'
 import { CardGrid } from '@/components/garage/cardGrid'
+import { DreamGarageSection } from '@/components/garage/dreamGarageSection'
 import Modal from '@/components/ui/modal'
 import { useEffect, useState } from 'react'
 import { useSearchParams } from 'next/navigation'
 import Image from 'next/image'
-import { StarIcon } from 'lucide-react'
-import { card, getCards, getOwnedCards } from '@/app/_cards/repo'
+import { StarIcon, CurrencyIcon } from 'lucide-react'
+import { card, getCards, getOwnedCards, sellCard, getDreamGarage, updateDreamGarage } from '@/app/_cards/repo'
+import { toast } from 'sonner'
 import { pack, getPacks } from '@/app/_packs/repo'
+
+const ratingPrice: Record<string, number> = {
+  'S+': 2500,
+  S: 1000,
+  A: 500,
+  B: 200,
+  C: 75
+}
 
 const ratingBadgeClass: Record<string, string> = {
   'S+': 'bg-amber-400 text-primary',
@@ -19,12 +29,21 @@ const ratingBadgeClass: Record<string, string> = {
 }
 
 export default function Home() {
+  // Garage filter and navigation
   const [showOnlyOwned, setShowOnlyOwned] = useState(false)
   const [selectedPackId, setSelectedPackId] = useState<number | null>(null)
-  const [viewCard, setViewCard] = useState<card | null | undefined>(null)
+
+  // Card data
   const [collectedCards, setCollectedCards] = useState<number[]>([])
   const [allCards, setAllCards] = useState<card[]>([])
   const [packs, setPacks] = useState<pack[]>([])
+
+  // Card modal
+  const [viewCard, setViewCard] = useState<card | null | undefined>(null)
+  const [sellQuantity, setSellQuantity] = useState(1)
+
+  // Dream garage
+  const [dreamGarageIds, setDreamGarageIds] = useState<number[]>([])
 
   const searchParams = useSearchParams()
 
@@ -33,21 +52,19 @@ export default function Home() {
   const username = userObj.username
 
   useEffect(() => {
-    async function loadAndSetCards() {
-      const ownedCards = await getOwnedCards()
+    async function loadData() {
+      const [ownedCards, cards, packs, dreamIds] = await Promise.all([
+        getOwnedCards(),
+        getCards(),
+        getPacks(),
+        getDreamGarage()
+      ])
       setCollectedCards(ownedCards)
-
-      const cards = await getCards()
       setAllCards(cards)
-    }
-
-    async function loadAndSetPacks() {
-      const packs = await getPacks()
       setPacks([...packs].sort((a, b) => a.name.localeCompare(b.name)))
+      setDreamGarageIds(dreamIds)
     }
-
-    loadAndSetCards()
-    loadAndSetPacks()
+    loadData()
   }, [])
 
   useEffect(() => {
@@ -104,11 +121,74 @@ export default function Home() {
 
   function closeModal() {
     setViewCard(null)
+    setSellQuantity(1)
   }
+
+  async function handleSellDuplicate() {
+    if (!viewCard) return
+    const result = await sellCard(viewCard.id, sellQuantity)
+    if (result) {
+      setCollectedCards((prev) => {
+        const next = [...prev]
+        for (let i = 0; i < sellQuantity; i++) {
+          const index = next.indexOf(viewCard.id)
+          if (index !== -1) next.splice(index, 1)
+        }
+        return next
+      })
+      setSellQuantity(1)
+      window.dispatchEvent(new CustomEvent('points-updated', { detail: { points: result.points } }))
+      toast.success(`Sold ${sellQuantity} duplicate${sellQuantity > 1 ? 's' : ''} for +${result.pointsEarned}`)
+    }
+  }
+
+  // Dream garage actions
+  async function handleAddToDreamGarage(cardId: number) {
+    if (dreamGarageIds.length >= 5 || dreamGarageIds.includes(cardId)) return
+    const newIds = [...dreamGarageIds, cardId]
+    setDreamGarageIds(newIds)
+    await updateDreamGarage(newIds)
+    toast.success('Added to dream garage')
+  }
+
+  async function handleRemoveFromDreamGarage(cardId: number) {
+    const newIds = dreamGarageIds.filter((id) => id !== cardId)
+    setDreamGarageIds(newIds)
+    await updateDreamGarage(newIds)
+    toast.success('Removed from dream garage')
+  }
+
+  async function handleReorderDreamGarage(newCardIds: number[]) {
+    setDreamGarageIds(newCardIds)
+    await updateDreamGarage(newCardIds)
+  }
+
+  const dreamCards = dreamGarageIds
+    .map((id) => allCards.find((c) => c.id === id))
+    .filter((c): c is card => c !== undefined)
+
+  const isInDreamGarage = viewCard ? dreamGarageIds.includes(viewCard.id) : false
+  const canAddToDreamGarage = viewCard
+    ? collectedCards.includes(viewCard.id) && !isInDreamGarage && dreamGarageIds.length < 5
+    : false
 
   return (
     <div>
-      <h1 className="text-center py-6">{username}&apos;s Garage</h1>
+      <h1 className="text-center py-6">{username}&apos;s Dream Garage</h1>
+
+      {allCards.length > 0 && (
+        <DreamGarageSection
+          dreamCards={dreamCards}
+          onRemove={handleRemoveFromDreamGarage}
+          onReorder={handleReorderDreamGarage}
+          onCardClick={viewCardModal}
+        />
+      )}
+
+      <div className="flex items-center gap-3 mb-2">
+        <h2 className="text-lg font-semibold text-muted-foreground">Collection</h2>
+        <div className="flex-1 h-px bg-border/60" />
+      </div>
 
       {packs.length > 0 && (
         <div className="sticky top-14 z-30 relative mb-8">
@@ -212,6 +292,72 @@ export default function Home() {
               <p className="font-semibold">{viewCard?.engine}</p>
             </div>
           </div>
+
+          {viewCard && collectedCards.includes(viewCard.id) && (() => {
+            const hasDuplicates = collectedCards.filter((id) => id === viewCard.id).length > 1
+            const maxSellable = collectedCards.filter((id) => id === viewCard.id).length - 1
+            const garageFull = !canAddToDreamGarage && !isInDreamGarage && dreamGarageIds.length >= 5
+
+            return (
+              <div className="w-full space-y-2">
+                <div className="flex gap-2 flex-wrap justify-center">
+                  {canAddToDreamGarage && (
+                    <button
+                      onClick={() => handleAddToDreamGarage(viewCard.id)}
+                      className="px-3 py-2 rounded-md border border-border text-sm font-medium hover:bg-muted transition-colors"
+                    >
+                      Add to Dream Garage
+                    </button>
+                  )}
+                  {isInDreamGarage && (
+                    <button
+                      onClick={() => { handleRemoveFromDreamGarage(viewCard.id); closeModal() }}
+                      className="px-3 py-2 rounded-md border border-border text-sm font-medium text-muted-foreground hover:bg-muted transition-colors"
+                    >
+                      Remove from Dream Garage
+                    </button>
+                  )}
+                  {hasDuplicates && (
+                    <div className="border border-border rounded-md px-3 py-1.5 flex items-center gap-2">
+                      <span className="text-sm text-muted-foreground flex items-center gap-1">
+                        Sell
+                        <span className="text-accent font-semibold flex items-center gap-0.5">
+                          +{ratingPrice[viewCard.rating] * sellQuantity}
+                          <CurrencyIcon size={12} />
+                        </span>
+                      </span>
+                      <div className="flex items-center gap-1.5">
+                        <button
+                          onClick={() => setSellQuantity((q) => Math.max(1, q - 1))}
+                          className="h-6 w-6 rounded border border-border flex items-center justify-center text-sm hover:bg-muted transition-colors disabled:opacity-40"
+                          disabled={sellQuantity <= 1}
+                        >
+                          −
+                        </button>
+                        <span className="w-4 text-center text-sm font-semibold">{sellQuantity}</span>
+                        <button
+                          onClick={() => setSellQuantity((q) => Math.min(maxSellable, q + 1))}
+                          className="h-6 w-6 rounded border border-border flex items-center justify-center text-sm hover:bg-muted transition-colors disabled:opacity-40"
+                          disabled={sellQuantity >= maxSellable}
+                        >
+                          +
+                        </button>
+                        <button
+                          onClick={handleSellDuplicate}
+                          className="px-2.5 py-1 rounded bg-primary text-primary-foreground text-sm font-medium hover:bg-primary/90 transition-colors"
+                        >
+                          Sell
+                        </button>
+                      </div>
+                    </div>
+                  )}
+                </div>
+                {garageFull && (
+                  <p className="text-xs text-muted-foreground text-center">Dream garage is full (5/5)</p>
+                )}
+              </div>
+            )
+          })()}
         </div>
       </Modal>
     </div>

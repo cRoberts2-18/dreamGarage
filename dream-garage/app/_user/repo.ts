@@ -8,6 +8,27 @@ export type user = {
   points: number
 }
 
+export const signUp = async (
+  username: string | null,
+  email: string | null,
+  password: string | null
+): Promise<string | void> => {
+  const options = {
+    method: 'POST',
+    body: `{"username":"${username}","email":"${email}","password":"${password}"}`
+  }
+
+  const response = await fetch(`${API_URL}/user/create`, options).then((r) =>
+    r.json()
+  )
+
+  if (response.status == 200) {
+    return login(username, password)
+  }
+
+  return response.message
+}
+
 export const login = async (
   username: string | null,
   password: string | null

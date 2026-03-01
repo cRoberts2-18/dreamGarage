@@ -2,20 +2,14 @@
 import { Geist, Geist_Mono } from 'next/font/google'
 import '../globals.css'
 import Link from 'next/link'
-import { ToolboxIcon, CarIcon, CurrencyIcon, CheckIcon } from 'lucide-react'
+import { ToolboxIcon, CarIcon, CurrencyIcon, CheckIcon, ChevronDownIcon, LogOutIcon, UsersIcon } from 'lucide-react'
 import {
   NavigationMenu,
   NavigationMenuItem,
-  NavigationMenuLink,
   NavigationMenuList
 } from '@/components/ui/navigation-menu'
 
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipTrigger
-} from '@/components/ui/tooltip'
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { updatePoints } from '../_user/repo'
 import Modal from '@/components/ui/modal'
 import { Card, CardContent } from '@/components/ui/card'
@@ -42,6 +36,32 @@ export default function RootLayout({
   const [user, setUser] = useState(userObj)
 
   const [dailyModal, setDailyModal] = useState<boolean>(false)
+  const [userMenuOpen, setUserMenuOpen] = useState(false)
+  const userMenuRef = useRef<HTMLDivElement>(null)
+
+  const logout = () => {
+    localStorage.removeItem('access-token')
+    localStorage.removeItem('user')
+    document.location.href = '/login'
+  }
+
+  useEffect(() => {
+    const handleClickOutside = (e: MouseEvent) => {
+      if (userMenuRef.current && !userMenuRef.current.contains(e.target as Node)) {
+        setUserMenuOpen(false)
+      }
+    }
+    document.addEventListener('mousedown', handleClickOutside)
+    return () => document.removeEventListener('mousedown', handleClickOutside)
+  }, [])
+
+  useEffect(() => {
+    const handlePointsUpdated = (e: CustomEvent) => {
+      setUser((prev: typeof userObj) => ({ ...prev, points: e.detail.points }))
+    }
+    window.addEventListener('points-updated', handlePointsUpdated as EventListener)
+    return () => window.removeEventListener('points-updated', handlePointsUpdated as EventListener)
+  }, [])
 
   useEffect(() => {
     async function checkPoints() {
@@ -77,6 +97,7 @@ export default function RootLayout({
 
   const isGarage = path === '/garage'
   const isShop = path === '/'
+  const isFriends = path.startsWith('/friends')
 
   return (
     <div>
@@ -88,54 +109,69 @@ export default function RootLayout({
           <NavigationMenu>
             <NavigationMenuList className="gap-1">
               <NavigationMenuItem>
-                <NavigationMenuLink className="p-0 bg-transparent hover:bg-transparent focus:bg-transparent">
-                  <Tooltip>
-                    <TooltipTrigger asChild>
-                      <Link
-                        href="/garage"
-                        className={`flex items-center gap-1.5 px-3 py-2 rounded-lg text-sm font-medium transition-colors ${
-                          isGarage
-                            ? 'bg-primary text-primary-foreground'
-                            : 'text-muted-foreground hover:text-foreground hover:bg-muted'
-                        }`}
-                      >
-                        <CarIcon size={16} />
-                        <span>Garage</span>
-                      </Link>
-                    </TooltipTrigger>
-                    <TooltipContent>
-                      <p>Garage</p>
-                    </TooltipContent>
-                  </Tooltip>
-                </NavigationMenuLink>
+                <Link
+                  href="/garage"
+                  className={`flex items-center gap-1.5 px-3 py-2 rounded-lg text-sm font-medium transition-colors ${
+                    isGarage
+                      ? 'bg-primary text-primary-foreground'
+                      : 'text-muted-foreground hover:text-foreground hover:bg-muted'
+                  }`}
+                >
+                  <CarIcon size={16} />
+                  <span>Garage</span>
+                </Link>
               </NavigationMenuItem>
               <NavigationMenuItem>
-                <NavigationMenuLink className="p-0 bg-transparent hover:bg-transparent focus:bg-transparent">
-                  <Tooltip>
-                    <TooltipTrigger asChild>
-                      <Link
-                        href="/"
-                        className={`flex items-center gap-1.5 px-3 py-2 rounded-lg text-sm font-medium transition-colors ${
-                          isShop
-                            ? 'bg-primary text-primary-foreground'
-                            : 'text-muted-foreground hover:text-foreground hover:bg-muted'
-                        }`}
-                      >
-                        <ToolboxIcon size={16} />
-                        <span>Shop</span>
-                      </Link>
-                    </TooltipTrigger>
-                    <TooltipContent>
-                      <p>Shop</p>
-                    </TooltipContent>
-                  </Tooltip>
-                </NavigationMenuLink>
+                <Link
+                  href="/"
+                  className={`flex items-center gap-1.5 px-3 py-2 rounded-lg text-sm font-medium transition-colors ${
+                    isShop
+                      ? 'bg-primary text-primary-foreground'
+                      : 'text-muted-foreground hover:text-foreground hover:bg-muted'
+                  }`}
+                >
+                  <ToolboxIcon size={16} />
+                  <span>Shop</span>
+                </Link>
+              </NavigationMenuItem>
+              <NavigationMenuItem>
+                <Link
+                  href="/friends"
+                  className={`flex items-center gap-1.5 px-3 py-2 rounded-lg text-sm font-medium transition-colors ${
+                    isFriends
+                      ? 'bg-primary text-primary-foreground'
+                      : 'text-muted-foreground hover:text-foreground hover:bg-muted'
+                  }`}
+                >
+                  <UsersIcon size={16} />
+                  <span>Friends</span>
+                </Link>
               </NavigationMenuItem>
             </NavigationMenuList>
           </NavigationMenu>
-          <div className="w-32 flex justify-end items-center gap-1.5 text-sm font-semibold">
-            <span>{user.points}</span>
-            <CurrencyIcon size={16} className="text-accent" />
+          <div className="flex justify-end" ref={userMenuRef}>
+            <div className="relative">
+              <button
+                onClick={() => setUserMenuOpen((o) => !o)}
+                className="flex items-center gap-1.5 px-2 py-1 rounded-lg text-sm font-semibold hover:bg-muted transition-colors"
+              >
+                <span>{user.points}</span>
+                <CurrencyIcon size={16} className="text-accent" />
+                <span className="ml-1 text-muted-foreground">{user.username}</span>
+                <ChevronDownIcon size={14} className={`transition-transform ${userMenuOpen ? 'rotate-180' : ''}`} />
+              </button>
+              {userMenuOpen && (
+                <div className="absolute right-0 top-full mt-1 bg-background border border-border rounded-lg shadow-lg py-1 min-w-32 z-50">
+                  <button
+                    onClick={logout}
+                    className="flex items-center gap-2 px-3 py-2 text-sm w-full hover:bg-muted transition-colors text-muted-foreground hover:text-foreground"
+                  >
+                    <LogOutIcon size={14} />
+                    <span>Log out</span>
+                  </button>
+                </div>
+              )}
+            </div>
           </div>
         </div>
       </header>

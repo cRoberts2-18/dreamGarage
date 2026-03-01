@@ -6,17 +6,19 @@ import (
 	"net/http"
 
 	"github.com/gin-gonic/gin"
+	"github.com/lib/pq"
 	"golang.org/x/crypto/bcrypt"
 )
 
 type User struct {
-	Id          int          `json:"id"`
-	Username    string       `json:"username"`
-	Email       string       `json:"email"`
-	Password    string       `json:"password"`
-	Points      string       `json:"points"`
-	Last_Active sql.NullTime `json:"last_active"`
-	Streak      int          `json:"streak"`
+	Id           int           `json:"id"`
+	Username     string        `json:"username"`
+	Email        string        `json:"email"`
+	Password     string        `json:"password"`
+	Points       string        `json:"points"`
+	Last_Active  sql.NullTime  `json:"last_active"`
+	Streak       int           `json:"streak"`
+	DreamGarage  pq.Int64Array `json:"dream_garage" db:"dream_garage"`
 }
 
 type UserInput struct {
@@ -49,7 +51,18 @@ RETURNING id`
 	id := 0
 	err = db.Conn.QueryRowx(sqlStatement, username, email, password).Scan(&id)
 	if err != nil {
-		panic(err)
+		if pqErr, ok := err.(*pq.Error); ok && pqErr.Code == "23505" {
+			if pqErr.Constraint == "users_username_key" {
+				ResponseJSON(c, http.StatusConflict, "Username already taken", nil)
+				return
+			}
+			if pqErr.Constraint == "users_email_key" {
+				ResponseJSON(c, http.StatusConflict, "Email already taken", nil)
+				return
+			}
+		}
+		ResponseJSON(c, http.StatusInternalServerError, "Could not create user", nil)
+		return
 	}
 	ResponseJSON(c, http.StatusOK, "User Created Successfully", id)
 
@@ -103,4 +116,49 @@ func chargeUser(userId int, price int) {
 func HashPassword(password string) (string, error) {
 	bytes, err := bcrypt.GenerateFromPassword([]byte(password), 14)
 	return string(bytes), err
+}
+
+type DreamGarageInput struct {
+	Id      int   `json:"id"`
+	CardIds []int `json:"cardIds"`
+}
+
+func GetDreamGarage(c *gin.Context) {
+	var input IdInput
+
+	if err := c.ShouldBindJSON(&input); err != nil {
+		ResponseJSON(c, http.StatusBadRequest, "Invalid request payload", nil)
+		return
+	}
+
+	var dreamGarage pq.Int64Array
+	err := db.Conn.QueryRowx("SELECT COALESCE(dream_garage, ARRAY[]::integer[]) FROM users WHERE id=$1", input.Id).Scan(&dreamGarage)
+	if err != nil {
+		ResponseJSON(c, http.StatusInternalServerError, "Could not fetch dream garage", nil)
+		return
+	}
+
+	ResponseJSON(c, http.StatusOK, "Dream garage fetched", dreamGarage)
+}
+
+func UpdateDreamGarage(c *gin.Context) {
+	var input DreamGarageInput
+
+	if err := c.ShouldBindJSON(&input); err != nil {
+		ResponseJSON(c, http.StatusBadRequest, "Invalid request payload", nil)
+		return
+	}
+
+	if len(input.CardIds) > 5 {
+		ResponseJSON(c, http.StatusBadRequest, "Dream garage can contain at most 5 cards", nil)
+		return
+	}
+
+	_, err := db.Conn.Exec("UPDATE users SET dream_garage=$2 WHERE id=$1", input.Id, pq.Array(input.CardIds))
+	if err != nil {
+		ResponseJSON(c, http.StatusInternalServerError, "Could not update dream garage", nil)
+		return
+	}
+
+	ResponseJSON(c, http.StatusOK, "Dream garage updated", input.CardIds)
 }

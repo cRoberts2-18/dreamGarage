@@ -5,27 +5,30 @@ import { Field, FieldGroup, FieldLabel } from '@/components/ui/field'
 import { Input } from '@/components/ui/input'
 import { Button } from '@/components/ui/button'
 import { useState } from 'react'
-import { login } from '@/app/_user/repo'
+import { signUp } from '@/app/_user/repo'
 import Link from 'next/link'
 
-export default function Home() {
+export default function SignUp() {
   const [username, setUsername] = useState<string | null>(null)
+  const [email, setEmail] = useState<string | null>(null)
   const [password, setPassword] = useState<string | null>(null)
+  const [error, setError] = useState<string | null>(null)
   const [isLoading, setIsLoading] = useState(false)
 
   const submit = async () => {
     setIsLoading(true)
+    setError(null)
     try {
-      await login(username, password)
+      const errorMessage = await signUp(username, email, password)
+      if (errorMessage) setError(errorMessage)
     } finally {
       setIsLoading(false)
     }
   }
 
   return (
-    <Modal showModal={true} title="Dream Garage" onClose={() => null} hideClose>
-      <h3 className="text-center">Login</h3>
-      <div className="flex justify-center items-center h-75">
+    <Modal showModal={true} title="Sign Up" onClose={() => null} hideClose>
+      <div className="flex justify-center">
         <form
           className="w-75"
           onSubmit={(e) => {
@@ -43,7 +46,16 @@ export default function Home() {
               />
             </Field>
             <Field>
-              <FieldLabel htmlFor="fieldgroup-password">password</FieldLabel>
+              <FieldLabel htmlFor="fieldgroup-email">Email</FieldLabel>
+              <Input
+                id="fieldgroup-email"
+                type="email"
+                placeholder="email..."
+                onChange={(e) => setEmail(e.currentTarget.value)}
+              />
+            </Field>
+            <Field>
+              <FieldLabel htmlFor="fieldgroup-password">Password</FieldLabel>
               <Input
                 id="fieldgroup-password"
                 type="password"
@@ -51,22 +63,23 @@ export default function Home() {
                 onChange={(e) => setPassword(e.currentTarget.value)}
               />
             </Field>
-            <Field>
-              <p className="text-sm">
-                Don&apos;t have an account?{' '}
-                <Link href="/signup" className="underline">
-                  Sign up
-                </Link>
-              </p>
-            </Field>
+            {error && <p className="text-red-500 text-sm">{error}</p>}
             <Field>
               <Button type="submit" disabled={isLoading} className="min-w-20">
                 {isLoading ? (
                   <div className="h-4 w-4 rounded-full border-2 border-current border-t-transparent animate-spin" />
                 ) : (
-                  'Login'
+                  'Sign Up'
                 )}
               </Button>
+            </Field>
+            <Field>
+              <p className="text-sm">
+                Already have an account?{' '}
+                <Link href="/login" className="underline">
+                  Log in
+                </Link>
+              </p>
             </Field>
           </FieldGroup>
         </form>

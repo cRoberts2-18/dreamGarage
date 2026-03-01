@@ -36,7 +36,7 @@ func GenerateJWT(c *gin.Context) {
 	case nil:
 		err := bcrypt.CompareHashAndPassword([]byte(user.Password), []byte(loginRequest.Password))
 		if err == nil {
-			expirationTime := time.Now().Add(15 * time.Minute)
+			expirationTime := time.Now().Add(30 * 24 * time.Hour)
 			token := jwt.NewWithClaims(jwt.SigningMethodHS256, jwt.MapClaims{
 				"exp": expirationTime.Unix(),
 				"userID": user.Id,

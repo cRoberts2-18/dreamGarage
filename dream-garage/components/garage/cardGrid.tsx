@@ -61,9 +61,10 @@ export function CardGrid({
   packItems = packItems
     .filter((packItem) => packItem.packId == packId)
     .map((pack) => {
-      const cardsOwned = ownedItems.reduce((acc, cardId) => {
-        return pack.id == cardId ? (acc += 1) : acc
-      }, 0)
+      const cardsOwned =
+        ownedItems?.reduce((acc, cardId) => {
+          return pack.id == cardId ? (acc += 1) : acc
+        }, 0) || 0
       return { ...pack, numberOwned: cardsOwned }
     })
     .sort((a: packItem, b: packItem): number => {
@@ -83,7 +84,7 @@ export function CardGrid({
 
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
         {packItems.map((item, index) => {
-          const isOwned = ownedItems.includes(item.id)
+          const isOwned = ownedItems?.includes(item.id)
           return (
             <div key={index} className="relative group">
               <span

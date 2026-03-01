@@ -44,6 +44,7 @@ func main() {
 		protected.GET("/cards", api.GetCards)
 		protected.GET("/cards/:id", api.GetCard)
 		protected.POST("/cards/owned", api.GetUserOwnedCards)
+		protected.POST("/cards/sell", api.SellCard)
 		
 		// Packs
 		protected.GET("/packs", api.GetPacks)
@@ -51,6 +52,16 @@ func main() {
 
 		// users
 		protected.POST("/user/points", api.UpdateUserPoints)
+		protected.POST("/user/dream-garage", api.GetDreamGarage)
+		protected.PUT("/user/dream-garage", api.UpdateDreamGarage)
+
+		// friends
+		protected.POST("/friends/request", api.SendFriendRequest)
+		protected.POST("/friends/requests", api.GetFriendRequests)
+		protected.PUT("/friends/request/:id", api.RespondToFriendRequest)
+		protected.POST("/friends", api.GetFriends)
+		protected.DELETE("/friends/:id", api.RemoveFriend)
+		protected.POST("/friends/:friendId/dream-garage", api.GetFriendDreamGarage)
 	}
 
 	r.Run(":6767")

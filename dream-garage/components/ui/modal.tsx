@@ -6,13 +6,15 @@ type modalProps = {
   children: React.ReactNode
   title: string
   onClose: () => void
+  hideClose?: boolean
 }
 
 export default function Modal({
   showModal,
   children,
   title,
-  onClose
+  onClose,
+  hideClose
 }: modalProps) {
   return (
     <>
@@ -29,11 +31,15 @@ export default function Modal({
               <div className="flex items-center justify-between px-5 py-4 border-b border-border/60">
                 <div className="w-6" />
                 <h3>{title}</h3>
-                <XIcon
-                  className="cursor-pointer text-muted-foreground hover:text-foreground transition-colors"
-                  size={18}
-                  onClick={() => onClose()}
-                />
+                {hideClose ? (
+                  <div className="w-6" />
+                ) : (
+                  <XIcon
+                    className="cursor-pointer text-muted-foreground hover:text-foreground transition-colors"
+                    size={18}
+                    onClick={() => onClose()}
+                  />
+                )}
               </div>
               <div className="p-4">{children}</div>
             </div>
