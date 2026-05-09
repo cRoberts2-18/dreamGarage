@@ -200,6 +200,44 @@ func RemoveFriend(c *gin.Context) {
 	ResponseJSON(c, http.StatusOK, "Friend removed", nil)
 }
 
+func GetFriendCards(c *gin.Context) {
+	friendId := c.Param("friendId")
+	var input FriendIdInput
+	if err := c.ShouldBindJSON(&input); err != nil {
+		ResponseJSON(c, http.StatusBadRequest, "Invalid request payload", nil)
+		return
+	}
+
+	var friendshipCount int
+	err := db.Conn.QueryRowx(`
+		SELECT COUNT(*) FROM friendships
+		WHERE ((requester_id=$1 AND addressee_id=$2) OR (requester_id=$2 AND addressee_id=$1))
+		AND status='accepted'`,
+		input.UserId, friendId).Scan(&friendshipCount)
+	if err != nil || friendshipCount == 0 {
+		ResponseJSON(c, http.StatusForbidden, "Not friends with this user", nil)
+		return
+	}
+
+	rows, err := db.Conn.Queryx("SELECT card_id FROM user_cards WHERE user_id=$1", friendId)
+	if err != nil {
+		ResponseJSON(c, http.StatusInternalServerError, "Could not fetch friend's cards", nil)
+		return
+	}
+	defer rows.Close()
+
+	cardIds := []int{}
+	for rows.Next() {
+		var cardId int
+		if err := rows.Scan(&cardId); err != nil {
+			continue
+		}
+		cardIds = append(cardIds, cardId)
+	}
+
+	ResponseJSON(c, http.StatusOK, "Friend cards fetched", cardIds)
+}
+
 func GetFriendDreamGarage(c *gin.Context) {
 	friendId := c.Param("friendId")
 	var input FriendIdInput

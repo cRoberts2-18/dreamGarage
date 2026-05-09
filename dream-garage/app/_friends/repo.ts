@@ -95,6 +95,16 @@ export const removeFriend = async (friendshipId: number): Promise<boolean> => {
   return response.status === 200
 }
 
+export const getFriendCards = async (friendId: number): Promise<number[]> => {
+  const response = await fetch(`${API_URL}/friends/${friendId}/cards`, {
+    method: 'POST',
+    body: JSON.stringify({ userId: currentUserId() }),
+    headers: authHeaders()
+  }).then((r) => r.json())
+
+  return response.data ?? []
+}
+
 export const getFriendDreamGarage = async (
   friendId: number
 ): Promise<FriendDreamGarage | null> => {

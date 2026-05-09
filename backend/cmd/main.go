@@ -62,6 +62,16 @@ func main() {
 		protected.POST("/friends", api.GetFriends)
 		protected.DELETE("/friends/:id", api.RemoveFriend)
 		protected.POST("/friends/:friendId/dream-garage", api.GetFriendDreamGarage)
+		protected.POST("/friends/:friendId/cards", api.GetFriendCards)
+
+		// trades
+		protected.POST("/trades", api.CreateTrade)
+		protected.POST("/trades/active", api.GetActiveTrades)
+		protected.PUT("/trades/:id/accept", api.AcceptTrade)
+		protected.PUT("/trades/:id/reject", api.RejectTrade)
+		protected.PUT("/trades/:id/cancel", api.CancelTrade)
+		protected.PUT("/trades/:id/counter", api.CounterTrade)
+		protected.POST("/trades/history", api.GetTradeHistory)
 	}
 
 	r.Run(":6767")

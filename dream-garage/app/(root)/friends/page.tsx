@@ -5,9 +5,11 @@ import {
   CheckIcon,
   XIcon,
   UserXIcon,
-  ChevronDownIcon
+  ChevronDownIcon,
+  Repeat2Icon
 } from 'lucide-react'
 import Image from 'next/image'
+import { useRouter } from 'next/navigation'
 import { Input } from '@/components/ui/input'
 import { Button } from '@/components/ui/button'
 import Modal from '@/components/ui/modal'
@@ -46,6 +48,8 @@ type RemoveTarget = {
 }
 
 export default function FriendsPage() {
+  const router = useRouter()
+
   // Add friend form
   const [addFriendOpen, setAddFriendOpen] = useState(false)
   const [searchUsername, setSearchUsername] = useState('')
@@ -322,6 +326,13 @@ export default function FriendsPage() {
                       className={`text-muted-foreground transition-transform duration-200 ${isCollapsed ? '-rotate-90' : ''}`}
                     />
                     {friend.username}
+                  </button>
+                  <button
+                    onClick={() => router.push(`/trades?friendId=${friend.friendId}`)}
+                    className="p-1.5 rounded-md text-muted-foreground/40 hover:text-accent hover:bg-muted transition-colors"
+                    aria-label={`Trade with ${friend.username}`}
+                  >
+                    <Repeat2Icon size={14} />
                   </button>
                   <button
                     onClick={() =>

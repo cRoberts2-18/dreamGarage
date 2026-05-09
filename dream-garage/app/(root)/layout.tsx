@@ -2,7 +2,7 @@
 import { Geist, Geist_Mono } from 'next/font/google'
 import '../globals.css'
 import Link from 'next/link'
-import { ToolboxIcon, CarIcon, CurrencyIcon, CheckIcon, ChevronDownIcon, LogOutIcon, UsersIcon } from 'lucide-react'
+import { ToolboxIcon, CarIcon, CurrencyIcon, CheckIcon, ChevronDownIcon, LogOutIcon, UsersIcon, Repeat2Icon } from 'lucide-react'
 import {
   NavigationMenu,
   NavigationMenuItem,
@@ -11,6 +11,7 @@ import {
 
 import { useEffect, useRef, useState } from 'react'
 import { updatePoints } from '../_user/repo'
+import { getActiveTrades } from '../_trades/repo'
 import Modal from '@/components/ui/modal'
 import { Card, CardContent } from '@/components/ui/card'
 import { usePathname } from 'next/navigation'
@@ -37,6 +38,7 @@ export default function RootLayout({
 
   const [dailyModal, setDailyModal] = useState<boolean>(false)
   const [userMenuOpen, setUserMenuOpen] = useState(false)
+  const [pendingTradeCount, setPendingTradeCount] = useState(0)
   const userMenuRef = useRef<HTMLDivElement>(null)
 
   const logout = () => {
@@ -61,6 +63,24 @@ export default function RootLayout({
     }
     window.addEventListener('points-updated', handlePointsUpdated as EventListener)
     return () => window.removeEventListener('points-updated', handlePointsUpdated as EventListener)
+  }, [])
+
+  useEffect(() => {
+    const handleTradesUpdated = (e: CustomEvent) => setPendingTradeCount(e.detail.count)
+    window.addEventListener('pending-trades-updated', handleTradesUpdated as EventListener)
+    return () => window.removeEventListener('pending-trades-updated', handleTradesUpdated as EventListener)
+  }, [])
+
+  useEffect(() => {
+    async function fetchTradeCount() {
+      try {
+        const userId = JSON.parse(localStorage.getItem('user') || '{}').id
+        if (!userId) return
+        const trades = await getActiveTrades()
+        setPendingTradeCount(trades.filter((t) => t.pendingUserId === userId).length)
+      } catch {}
+    }
+    fetchTradeCount()
   }, [])
 
   useEffect(() => {
@@ -98,6 +118,7 @@ export default function RootLayout({
   const isGarage = path === '/garage'
   const isShop = path === '/'
   const isFriends = path.startsWith('/friends')
+  const isTrades = path.startsWith('/trades')
 
   return (
     <div>
@@ -145,6 +166,24 @@ export default function RootLayout({
                 >
                   <UsersIcon size={16} />
                   <span>Friends</span>
+                </Link>
+              </NavigationMenuItem>
+              <NavigationMenuItem>
+                <Link
+                  href="/trades"
+                  className={`relative flex items-center gap-1.5 px-3 py-2 rounded-lg text-sm font-medium transition-colors ${
+                    isTrades
+                      ? 'bg-primary text-primary-foreground'
+                      : 'text-muted-foreground hover:text-foreground hover:bg-muted'
+                  }`}
+                >
+                  <Repeat2Icon size={16} />
+                  <span>Trades</span>
+                  {pendingTradeCount > 0 && (
+                    <span className="absolute -top-1 -right-1 h-4 min-w-4 px-1 rounded-full bg-accent text-primary text-[10px] font-bold flex items-center justify-center leading-none">
+                      {pendingTradeCount}
+                    </span>
+                  )}
                 </Link>
               </NavigationMenuItem>
             </NavigationMenuList>
