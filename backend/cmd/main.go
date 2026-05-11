@@ -72,6 +72,11 @@ func main() {
 		protected.PUT("/trades/:id/cancel", api.CancelTrade)
 		protected.PUT("/trades/:id/counter", api.CounterTrade)
 		protected.POST("/trades/history", api.GetTradeHistory)
+
+		// events & races
+		protected.GET("/events", api.GetEvents)
+		protected.GET("/events/:id/opponent", api.GetOpponent)
+		protected.POST("/races", api.SaveRace)
 	}
 
 	r.Run(":6767")

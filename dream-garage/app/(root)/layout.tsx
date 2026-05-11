@@ -2,7 +2,7 @@
 import { Geist, Geist_Mono } from 'next/font/google'
 import '../globals.css'
 import Link from 'next/link'
-import { ToolboxIcon, CarIcon, CurrencyIcon, CheckIcon, ChevronDownIcon, LogOutIcon, UsersIcon, Repeat2Icon } from 'lucide-react'
+import { ToolboxIcon, CarIcon, CurrencyIcon, CheckIcon, ChevronDownIcon, LogOutIcon, UsersIcon, Repeat2Icon, FlagIcon } from 'lucide-react'
 import {
   NavigationMenu,
   NavigationMenuItem,
@@ -119,6 +119,7 @@ export default function RootLayout({
   const isShop = path === '/'
   const isFriends = path.startsWith('/friends')
   const isTrades = path.startsWith('/trades')
+  const isRace = path.startsWith('/race')
 
   return (
     <div>
@@ -184,6 +185,19 @@ export default function RootLayout({
                       {pendingTradeCount}
                     </span>
                   )}
+                </Link>
+              </NavigationMenuItem>
+              <NavigationMenuItem>
+                <Link
+                  href="/race"
+                  className={`flex items-center gap-1.5 px-3 py-2 rounded-lg text-sm font-medium transition-colors ${
+                    isRace
+                      ? 'bg-primary text-primary-foreground'
+                      : 'text-muted-foreground hover:text-foreground hover:bg-muted'
+                  }`}
+                >
+                  <FlagIcon size={16} />
+                  <span>Race</span>
                 </Link>
               </NavigationMenuItem>
             </NavigationMenuList>
